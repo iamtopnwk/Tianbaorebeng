@@ -150,7 +150,7 @@ public class DeviceStateActivity extends Activity {
 						address=pc1.getString(TAG_ADDRESS);
 				        mstate=pc1.getString(TAG_MSTATE);
 					
-					deviceName=pc2.getString(TAG_DEVICE_NAME);
+					    deviceName=pc2.getString(TAG_DEVICE_NAME);
 						moduleNumber=pc2.getString(TAG_MODULE_NUMBER);
 						beginDate=pc2.getString(TAG_BEGIN_DATE);
 						userName=pc2.getString(TAG_USER_NAME);
