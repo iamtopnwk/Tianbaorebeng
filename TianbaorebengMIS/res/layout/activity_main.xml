@@ -1,0 +1,140 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+   android:layout_width="fill_parent"
+   android:layout_height="fill_parent">
+<TableLayout
+           
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:shrinkColumns="*"  android:stretchColumns="*" >
+ <TableRow
+                            android:layout_height="wrap_content"
+                            android:layout_width="fill_parent"
+                            android:gravity="center_horizontal">
+ 
+                                 
+                           <ImageView  android:layout_width="fill_parent" 
+                                android:layout_span="5"
+                                android:src="@drawable/u148"
+                                android:layout_gravity="center"/></TableRow>
+                          
+                           <TableRow android:layout_height="wrap_content"
+                                     android:layout_width="fill_parent"
+                                     android:gravity="center_horizontal"> 
+                                 <TextView
+                                 android:id="@+id/text_name"
+                                 android:layout_width="wrap_content" 
+                                 android:textSize="18dip"
+                                 android:text="Tb_Device"  
+                                 android:layout_span="5"
+                                 android:textColor="#000"
+                                 android:layout_gravity="center"/>
+                            
+
+                       </TableRow>
+                        <!-- Row 1 with single column -->
+                       
+                       <TableRow
+                            android:id="@+id/tableRow1"
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent">
+                            <TextView android:background="@drawable/cell_shape"
+                                android:id="@+id/TextView04" android:text="DeviceId"
+                                android:textStyle="bold"
+                                android:textSize="17dip"
+                                android:layout_weight="1" 
+                                android:textColor="#000000"
+                                android:padding="4dip" android:gravity="center"/>
+                            <TextView android:background="@drawable/cell_shape"
+                                android:id="@+id/TextView05" android:text="User Name"
+                                android:textStyle="bold"
+                                android:textSize="17dip"
+                                android:layout_weight="1" 
+                                android:textColor="#000000"
+                                android:padding="4dip" android:gravity="center"/>
+                           
+                            <TextView android:background="@drawable/cell_shape"
+                                android:id="@+id/TextView07" android:text="Operation"
+                                android:textStyle="bold"
+                                android:textSize="17dip"
+                                android:layout_weight="1" 
+                                android:textColor="#000000"
+                                android:padding="4dip" android:gravity="center"/>
+                        </TableRow>
+                        
+                        <TableRow
+                            android:id="@+id/tableRow8"
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent">
+                            <TextView
+                                android:id="@+id/deviceNameHome" android:text="1"
+                                android:layout_weight="1" android:background="@drawable/cell_shape"
+                                android:textColor="#000000"
+                                android:padding="5dip" android:gravity="center"/>
+                            <TextView
+                                android:id="@+id/userNameHome" android:text="Device"
+                                android:layout_weight="1" android:background="@drawable/cell_shape"
+                                android:textColor="#000000"
+                                android:padding="5dip" android:gravity="center"/>
+                          
+                           <CheckBox
+                                android:layout_width="wrap_content" 
+                                android:layout_height="wrap_content"
+                                android:text="check here"
+                                android:id="@+id/check1" 
+                                android:layout_weight="1" 
+                                 android:padding="5dip"
+                                android:background="@drawable/cell_shape"
+                                 />
+                         
+                        </TableRow>
+                         <TableRow
+                            android:id="@+id/tableRow13"
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent">
+                            <TextView
+                                android:id="@+id/deviceNmaeHome2" android:text="2"
+                                android:layout_weight="1" android:background="@drawable/cell_shape"
+                                android:textColor="#000000"
+                                android:padding="5dip" android:gravity="center"/>
+                            <TextView
+                                android:id="@+id/userNameHome2" android:text="Abc"
+                                android:layout_weight="1" android:background="@drawable/cell_shape"
+                                android:textColor="#000000"
+                                android:padding="5dip" android:gravity="center"/>
+                         
+                           
+                           <CheckBox
+                                android:layout_width="wrap_content" 
+                                android:layout_height="wrap_content"
+                                android:text="check here"
+                                android:id="@+id/check2" 
+                                android:layout_weight="1" 
+                                 android:padding="5dip"
+                                android:background="@drawable/cell_shape"
+                                 />
+                        </TableRow>
+                             <ListView
+        android:id="@android:id/list"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" >
+    </ListView>
+                       
+      
+  <Button 
+                                
+                                android:layout_width="5dp"
+                                android:layout_height="50dp"
+                                android:id="@+id/nextHome" android:text="Next"
+                                android:textSize="13dip"
+                                android:layout_weight="1" 
+                                android:textColor="#000000"
+                                android:gravity="bottom"
+                                android:onClick="next"
+                                android:padding="4dip" android:layout_gravity="right"/>
+                            
+                       </TableLayout>
+                       </ScrollView>

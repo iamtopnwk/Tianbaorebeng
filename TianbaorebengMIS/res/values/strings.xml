@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TianbaorebengMIS</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+      
+    <string-array name="choice_arrays">
+        <item>Choice</item>
+        <item>Heating Mode</item>
+        <item>Cooling Mode</item>
+        <item>Auto Mode</item>
+       
+       
+    </string-array>
+ 
+</resources>
