@@ -17,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
@@ -25,6 +26,11 @@ public class MainActivity extends Activity {
 	private static final String TAG_USERNAME = "userName";
 	private static final String TAG_DEVICENAME = "deviceName";
 	private static final String TAG_UUID = "uuid";
+	
+	
+	String userName;
+	String deviceName;
+	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -64,10 +70,13 @@ public class MainActivity extends Activity {
 					
 					int length=jsonArray.length();
 					for(int i=0;i<length;i++){
-						JSONObject pc=jsonArray.getJSONObject(i);
-						System.out.println(pc.getString(TAG_DEVICENAME));
-						System.out.println(pc.getString(TAG_USERNAME));
-						System.out.println(pc.getString(TAG_ID));
+						JSONObject pc=jsonArray.getJSONObject(0);
+						
+						
+						deviceName=pc.getString(TAG_DEVICENAME);
+						userName=pc.getString(TAG_USERNAME);
+						
+						
 						
 					}
 					
@@ -80,6 +89,17 @@ public class MainActivity extends Activity {
 
 		protected void onPostExecute(Void unused) {
 			dialog.dismiss();
+			
+TextView txt1=(TextView)findViewById(R.id.deviceNameHome);
+TextView txt2=(TextView)findViewById(R.id.userNameHome);
+
+txt1.setText(deviceName);
+txt2.setText(userName);
+
+			
+			
+			
+			
 		}
 	}
 	
