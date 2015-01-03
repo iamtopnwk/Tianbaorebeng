@@ -4,16 +4,20 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import com.example.tianbaorebengmis.R;
-
-
+import com.infotop.tianbaorebengmis.devicestate.DeviceStateActivity;
 import com.infotop.tianbaorebengmis.httpservice.HttpServiceHandler;
 import com.infotop.tianbaorebengmis.httpservice.HttpUrl;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
@@ -26,18 +30,31 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		String serverURL = new HttpUrl().getUrl()+":8080/tianMIS/rest/devicesList";
+		String serverURL = new HttpUrl().getUrl()+":8080/Tianbaorebeng/rest/devicesList";
+		
+		
 
 		// Use AsyncTask execute Method To Prevent ANR Problem
 		new LongOperation().execute(serverURL);
 	}
 	private class LongOperation extends AsyncTask<String, Void, Void> {
+		private ProgressDialog dialog = new ProgressDialog(
+				MainActivity.this);
+		protected void onPreExecute() {
+			// NOTE: You can call UI Element here.
 
+			// Start Progress Dialog (Message)
+
+			dialog.setMessage("Please wait..");
+			dialog.show();
+
+		}
 		@Override
 		protected Void doInBackground(String... urls) {
 		    String pcontent;
 			// Send data
 			try {
+				
 				HttpServiceHandler hs = new HttpServiceHandler();
 				pcontent = hs.httpContent(urls[0]);
 				System.out.println("*********Content*******");	
@@ -51,6 +68,7 @@ public class MainActivity extends Activity {
 						System.out.println(pc.getString(TAG_DEVICENAME));
 						System.out.println(pc.getString(TAG_USERNAME));
 						System.out.println(pc.getString(TAG_ID));
+						
 					}
 					
 			} catch (Exception ex) {
@@ -61,8 +79,14 @@ public class MainActivity extends Activity {
 		}
 
 		protected void onPostExecute(Void unused) {
-			
+			dialog.dismiss();
 		}
+	}
+	
+	public void next(View view){
+		Intent i=new Intent(this,DeviceStateActivity.class);
+		startActivity(i);
+		
 	}
 
 	@Override

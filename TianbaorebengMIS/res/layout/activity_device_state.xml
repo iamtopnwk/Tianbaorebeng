@@ -737,10 +737,11 @@
                                 
                                 android:layout_width="5dp"
                                 android:layout_height="50dp"
-                                android:id="@+id/button" android:text="Next"
+                                android:id="@+id/next1" android:text="Next"
                                 android:textSize="13dip"
                                 android:layout_weight="1" 
                                 android:textColor="#000000"
+                                android:onClick="next1"
                                 android:padding="4dip" android:layout_gravity="right"/>
                             
                         </TableLayout>
