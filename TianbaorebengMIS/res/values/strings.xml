@@ -14,5 +14,21 @@
 
     <string name="title_activity_device_state">DeviceStateActivity</string>
     <string name="title_activity_command">CommandActivity</string>
+    <!-- Command Page -->
+    <string name="Command">Command</string>
+    <string name="RunMode">Run Mode</string>
+    <string name="setting">Setting</string>
+    <string name="HeatingCelsius">Heating Celsius:</string>
+    <string name="CoolingCelsius">Cooling Celsius:</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="reset">Reset</string>
+    <string name="defrost">Defrost</string>
+    <!-- Data State Page -->
+    <string name="Tb_DeviceState">device control</string>
+ 
+    <!-- Error Message and Success Messages -->
+
+    <string name="pleaseselectchoice">Please select choice</string>
 
 </resources>

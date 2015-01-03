@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">热泵空调远程监控系统服务器页面</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="choice_arrays">
+        <item>Choice</item>
+        <item>制热温度</item>
+        <item>制冷温度</item>
+        <item>运行模式</item>
+    </string-array>
+
+    <string name="title_activity_device_state">设备信息模块</string>
+    <string name="title_activity_command">设备控制模块</string>
+<!--Command Page  -->
+<string name="Command">设备控制</string>
+<string name="RunMode">运行模式</string>
+<string name="setting">设置</string>
+<string name="HeatingCelsius">制热温度:</string> 
+<string name="CoolingCelsius">制冷温度:</string> 
+<string name="start">开机</string>
+<string name="stop">关机</string>
+<string name="reset">复位</string>
+<string name="defrost">除霜</string>
+<!--Data State Page  -->
+ <string name="Tb_DeviceState">已上线设备</string>
+   
+</resources>
