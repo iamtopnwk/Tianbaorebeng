@@ -32,11 +32,11 @@
     
    </TableRow>
      <TableRow
-                            android:id="@+id/tableRow111"
-                            android:layout_height="wrap_content"
-                            android:layout_width="match_parent"
+                             android:id="@+id/tableRow111"
+                             android:layout_height="wrap_content"
+                             android:layout_width="match_parent"
                              android:paddingTop="130dp"
-                               >
+                             >
                             
                             <TextView 
                                 android:id="@+id/TextView015" android:text="Run Mode"
@@ -54,14 +54,12 @@
  
                            
                             <Button
-                                android:id="@+id/TextView17" 
-                                android:text="setting"
+                                android:id="@+id/settings" android:text="Settings"
                                 
                                 android:textSize="17dip"
                                 android:layout_weight="1" 
                                 android:textColor="#000000"
-                                android:padding="4dip" 
-                                android:gravity="center"/>
+                                android:padding="4dip" android:gravity="center"/>
                          
                         </TableRow>
    
@@ -92,9 +90,11 @@
             android:background="@drawable/rounded_edittext" >
         </EditText>
         <Button 
+             android:id="@+id/hCelsius"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="setting"/>
+            android:text="setting"
+            android:onClick="getHeatingCelsius"/>
     </TableRow>
 
     <!-- Row3 Column3 -->
@@ -124,9 +124,11 @@
             
         </EditText>
         <Button 
+            android:id="@+id/cCelsius"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="setting"/>
+            android:text="setting"
+            android:onClick="getCoolingCelsius"/>
     </TableRow>
     
     
@@ -138,36 +140,34 @@
     android:layout_marginLeft="60dp"
     android:layout_below="@+id/tableRow21"
     android:paddingTop="15dp"
-    android:onClick="startCommand"
+    android:onClick="postDeviceState"
     />
 <Button 
     android:id="@+id/stop"
     android:layout_width="100dp"
     android:layout_height="wrap_content"
-    android:layout_toRightOf="@+id/deviceState"
+    android:layout_toRightOf="@+id/start"
     android:layout_below="@+id/tableRow21"
     android:text="stop"
-    android:onClick="stopCommand"
+    android:onClick="postDeviceControl"
     />
 <Button 
     android:id="@+id/reset"
     android:layout_width="100dp"
     android:layout_height="wrap_content"
-    android:layout_below="@+id/deviceControl"
-     android:layout_marginLeft="60dp"
+    android:layout_below="@+id/start"
+    android:layout_marginLeft="60dp"
     android:text="reset"
-    android:onClick="resetCommand"
+    android:onClick="getDevices"
     />
     <Button 
     android:id="@+id/defrost"
     android:layout_width="100dp"
     android:layout_height="wrap_content"
-    android:layout_toRightOf="@+id/device"
-    android:layout_below="@+id/deviceControl"
+    android:layout_toRightOf="@+id/reset"
+    android:layout_below="@+id/stop"
     android:text="defrost"
-    android:onClick="defrostCommand">
-        
-    </Button>
+    android:onClick="getDevices"></Button>
  
 </RelativeLayout>
 
