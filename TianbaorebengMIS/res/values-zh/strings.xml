@@ -15,9 +15,14 @@
 <string name="HeatingMode">制热温度</string>
 <string name="CoolingMode">制冷温度</string>
 <string name="AutoMode">运行模式</string>
-    
+   
     <string name="title_activity_device_state">设备信息模块</string>
     <string name="title_activity_command">设备控制模块</string>
+   
+    <!-- DeviceList Page -->
+    <string name="DeviceList">设备列表</string>
+    <string name="Operation">操作</string>
+    
 <!--Command Page  -->
 <string name="Command">设备控制</string>
 <string name="RunMode">运行模式</string>

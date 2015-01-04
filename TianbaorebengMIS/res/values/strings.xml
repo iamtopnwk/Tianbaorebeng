@@ -17,6 +17,11 @@
 
     <string name="title_activity_device_state">DeviceStateActivity</string>
     <string name="title_activity_command">CommandActivity</string>
+    
+     <!-- DeviceList Page -->
+    <string name="DeviceList">DeviceList</string>
+    <string name="Operation">Operation</string>
+    
     <!-- Command Page -->
     <string name="Command">Command</string>
     <string name="RunMode">Run Mode</string>
