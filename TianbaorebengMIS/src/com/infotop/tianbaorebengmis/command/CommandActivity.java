@@ -32,7 +32,7 @@ public class CommandActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_command);
-		deviceId="1";
+		deviceId=getIntent().getExtras().getString("dId");
 		serverURL = new HttpUrl().getUrl()
 				+ ":8080/Tianbaorebeng/rest/statusUpdate";
 	}

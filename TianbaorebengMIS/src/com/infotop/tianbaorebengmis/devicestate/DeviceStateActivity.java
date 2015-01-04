@@ -71,14 +71,13 @@ public class DeviceStateActivity extends Activity {
 	String serverURL1;
 	Button useBtn, banBtn;
 
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_device_state);
 		useBtn = (Button) findViewById(R.id.useStateBtn);
 		banBtn = (Button) findViewById(R.id.banStateBtn);
-		deviceId="1";
+		deviceId=getIntent().getExtras().getString("dId");
 		String serverURL = new HttpUrl().getUrl()
 				+ ":8080/Tianbaorebeng/rest/deviceList/"+deviceId;
 		serverURL1 = new HttpUrl().getUrl()
@@ -291,6 +290,7 @@ public class DeviceStateActivity extends Activity {
 
 	public void next1(View view) {
 		Intent i = new Intent(this, CommandActivity.class);
+		i.putExtra("dId",deviceId);
 		startActivity(i);
 	}
 

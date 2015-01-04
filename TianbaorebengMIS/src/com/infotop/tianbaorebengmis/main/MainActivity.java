@@ -1,5 +1,10 @@
 package com.infotop.tianbaorebengmis.main;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -9,14 +14,24 @@ import com.infotop.tianbaorebengmis.httpservice.HttpServiceHandler;
 import com.infotop.tianbaorebengmis.httpservice.HttpUrl;
 
 import android.app.Activity;
+import android.app.ListActivity;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnTouchListener;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,27 +41,37 @@ public class MainActivity extends Activity {
 	private static final String TAG_USERNAME = "userName";
 	private static final String TAG_DEVICENAME = "deviceName";
 	private static final String TAG_UUID = "uuid";
+	//private List<Device> listDe = new ArrayList<Device>();
+	private  Context context;
+	/*String[] userName;
+	String[] deviceName;*/
 	
-	
-	String userName;
-	String deviceName;
-	
-	
+	ListView list;
+	private TableLayout tl;
+	 ArrayList<HashMap<String, String>> deviceList = new ArrayList<HashMap<String, String>>();
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.main_page);
 		String serverURL = new HttpUrl().getUrl()+":8080/Tianbaorebeng/rest/devicesList";
-		
-		
-
+		context=this;
+		//tl=(TableLayout)findViewById(R.id.TableLayoutmain3);
+		list = (ListView) findViewById(R.id.list);
 		// Use AsyncTask execute Method To Prevent ANR Problem
 		new LongOperation().execute(serverURL);
 	}
 	private class LongOperation extends AsyncTask<String, Void, Void> {
+		
+		DeviceListAdapter listAdapter;
+		private ArrayList<String> devName=new ArrayList<String>();
+		private ArrayList<String> useName=new ArrayList<String>();
+		String[] dId;
+        
 		private ProgressDialog dialog = new ProgressDialog(
 				MainActivity.this);
+		 @Override
 		protected void onPreExecute() {
+			 super.onPreExecute();
 			// NOTE: You can call UI Element here.
 
 			// Start Progress Dialog (Message)
@@ -64,21 +89,51 @@ public class MainActivity extends Activity {
 				HttpServiceHandler hs = new HttpServiceHandler();
 				pcontent = hs.httpContent(urls[0]);
 				System.out.println("*********Content*******");	
-				System.out.println(pcontent);
+				System.out.println("==========pppppppppp"+pcontent);
 				 JSONArray jsonArray;
 					jsonArray = new JSONArray(pcontent);
 					
 					int length=jsonArray.length();
+					System.out.println("================"+length);
+					dId = new String[length];
 					for(int i=0;i<length;i++){
-						JSONObject pc=jsonArray.getJSONObject(0);
+						JSONObject pc=jsonArray.getJSONObject(i);
+						System.out.println("Device Name:"+pc.getString(TAG_DEVICENAME));
+						devName.add(pc.getString(TAG_DEVICENAME));
+						useName.add(pc.getString(TAG_USERNAME));
+						dId[i] = pc.getString(TAG_ID);
+						System.out.println("jjjjjjjjjjjjj"+dId[i]);
+						System.out.println("Device Name:"+pc.getString(TAG_DEVICENAME));
+						/*deviceName[i]=pc.getString(TAG_DEVICENAME);
+						userName[i]=pc.getString(TAG_USERNAME);
+						System.out.println("oooooooooooooooooooooo"+deviceName[i]);*/
 						
 						
-						deviceName=pc.getString(TAG_DEVICENAME);
-						userName=pc.getString(TAG_USERNAME);
 						
+						//Device devic = new Device();
+						//devic.setId(pc.getString(TAG_ID).toString());
+						//devic.setDeviceName(pc.getString(TAG_DEVICENAME).toString());
+						//devic.setUserName(pc.getString(TAG_USERNAME).toString());
 						
+						//listDe.add(devic);
 						
 					}
+					/*for (Device deviceVal : listDe) {
+						//sout 
+						TableRow tr= new TableRow(context);
+						TextView tv=new TextView(context);
+						TextView tvdN=new TextView(context);
+						TextView tvUN=new TextView(context);
+						
+							tv.setText(deviceVal.getId());
+							tvdN.setText(deviceVal.getDeviceName());
+							tvUN.setText(deviceVal.getUserName());
+							tr.addView(tv);
+							tr.addView(tvdN);
+							tr.addView(tvUN);
+						tl.addView(tr);
+					}
+					*/
 					
 			} catch (Exception ex) {
 				System.out.println("Exception e:" + ex.getMessage());
@@ -89,19 +144,26 @@ public class MainActivity extends Activity {
 
 		protected void onPostExecute(Void unused) {
 			dialog.dismiss();
-			
-TextView txt1=(TextView)findViewById(R.id.deviceNameHome);
-TextView txt2=(TextView)findViewById(R.id.userNameHome);
-
-txt1.setText(deviceName);
-txt2.setText(userName);
-
-			
-			
-			
-			
-		}
-	}
+			listAdapter = new DeviceListAdapter(MainActivity.this,
+					devName, useName);
+			list.setAdapter(listAdapter);
+			//list.setTextFilterEnabled(true);
+			list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+				@Override
+				public void onItemClick(AdapterView<?> parent, View view,
+						int position, long id) {
+					
+					Intent i = new Intent(MainActivity.this,
+							DeviceStateActivity.class);
+					//i.putStringArrayListExtra("productData", productData);
+					i.putExtra("dId",dId[position]);
+					System.out.println("kkkkkkkkkkkkkkk"+dId[position]);
+					startActivity(i);
+				}
+			});
+	
+		}}
+	
 	
 	public void next(View view){
 		Intent i=new Intent(this,DeviceStateActivity.class);
