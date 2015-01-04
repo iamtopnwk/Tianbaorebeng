@@ -3,7 +3,7 @@
 
     <string name="app_name">热泵空调远程监控系统服务器页面</string>
     <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">设置</string>
 
     <string-array name="choice_arrays">
         <item>Choice</item>
@@ -24,7 +24,35 @@
 <string name="stop">关机</string>
 <string name="reset">复位</string>
 <string name="defrost">除霜</string>
-<!--Data State Page  -->
- <string name="Tb_DeviceState">已上线设备</string>
-   
+  <!-- Data State Page -->
+    <string name="Tb_DeviceState">设备控制</string>
+    <string name="DeviceUnitState">机组状态</string>
+    <string name="ModuleUse">模块使用（启用、禁用）</string>
+    <string name="ModuleNumber">模块个数</string>
+    <string name="EnvironmentCelsius">环境温度</string>
+    <string name="DeviceRunDateintotally">机组累计运行时间</string>
+    <string name="EvaporationEffluentCelsius">蒸发（空调系统）出水温度</string>
+    <string name="EvaporationRewaterCelsius">蒸发（空调系统）回水温度</string>
+    <string name="Name">模块名称</string>
+    <string name="Address">模块地址</string>
+    <string name="MState">模块状态</string>
+    <string name="Action">操作</string>
+    <string name="use">使用</string>
+    <string name="ban">禁用</string>
+    <string name="use1">(使用)</string>
+    <string name="DeviceState">设备状态</string>
+    <string name="DeviceControl">设备控制</string>
+    <string name="Device">设备信息</string>
+    <string name="DeviceName">设备名称:</string>
+    <string name="ModuleNumber1">模块数:</string>
+    <string name="BeginDate">启用时间:</string>
+    <string name="UserName">用户名称:</string>
+    <string name="UserIphone">用户电话:</string>
+    <string name="UserMail">用户邮箱:</string>
+    <string name="UserAddress">用户地址:</string>
+    <string name="Remark">备注:</string>
+    <!-- Error Message and Success Messages -->
+
+    <string name="pleaseselectchoice">Please select choice</string>
+
 </resources>

@@ -26,7 +26,31 @@
     <string name="defrost">Defrost</string>
     <!-- Data State Page -->
     <string name="Tb_DeviceState">device control</string>
- 
+    <string name="DeviceUnitState">Device Unit State</string>
+    <string name="ModuleUse">Module Use</string>
+    <string name="ModuleNumber">Module Number</string>
+    <string name="EnvironmentCelsius">Environment Celsius</string>
+    <string name="DeviceRunDateintotally">Device Run Date in totally</string>
+    <string name="EvaporationEffluentCelsius">Evaporation Effluent Celsius</string>
+    <string name="EvaporationRewaterCelsius">Evaporation Rewater Celsius</string>
+    <string name="Name">Name</string>
+    <string name="Address">Address</string>
+    <string name="MState">MState</string>
+    <string name="Action">Action</string>
+    <string name="use">use</string>
+    <string name="ban">ban</string>
+    <string name="use1">(use)</string>
+    <string name="DeviceState">DeviceState</string>
+    <string name="DeviceControl">DeviceControl</string>
+    <string name="Device">Device</string>
+    <string name="DeviceName">Device Name:</string>
+    <string name="ModuleNumber1">Module Number:</string>
+    <string name="BeginDate">Begin Date:</string>
+    <string name="UserName">User Name:</string>
+    <string name="UserIphone">User Iphone:</string>
+    <string name="UserMail">User Mail:</string>
+    <string name="UserAddress">User Address:</string>
+    <string name="Remark">Remark:</string>
     <!-- Error Message and Success Messages -->
 
     <string name="pleaseselectchoice">Please select choice</string>
