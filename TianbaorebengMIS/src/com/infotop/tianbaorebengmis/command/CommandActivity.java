@@ -39,21 +39,22 @@ public class CommandActivity extends Activity {
 	public void getRunModeButton(View view) {
 		Spinner runmodeData = (Spinner) findViewById(R.id.spinner1);
 		if (runmodeData.getSelectedItem().toString().trim().equals("Choice")) {
-			Toast.makeText(getApplicationContext(), "Please select choice",
+			//String s=getResources().getString(R.string.pleaseselectchoice);
+			Toast.makeText(getApplicationContext(),  getResources().getString(R.string.pleaseselectchoice),
 					Toast.LENGTH_SHORT).show();
 		} else if (runmodeData.getSelectedItem().toString().trim()
-				.equals("Heating Mode")) {
+				.equals(getResources().getString(R.string.HeatingMode))) {
 			command = "01 06 23 00 00 01";
 			deviceId = "1";
 			new LongOperation().execute(serverURL);
 
 		} else if (runmodeData.getSelectedItem().toString().trim()
-				.equals("Cooling Mode")) {
+				.equals(getResources().getString(R.string.CoolingMode))) {
 			command = "01 06 23 00 00 02";
 			deviceId = "1";
 			new LongOperation().execute(serverURL);
 		} else if (runmodeData.getSelectedItem().toString().trim()
-				.equals("Auto Mode")) {
+				.equals(getResources().getString(R.string.AutoMode))) {
 			command = "01 06 23 00 00 03";
 			deviceId = "1";
 			new LongOperation().execute(serverURL);
@@ -65,7 +66,7 @@ public class CommandActivity extends Activity {
 	public void getCoolingCelsius(View view) {
 		EditText coolingData = ((EditText) findViewById(R.id.editText21));
 		if (coolingData.getText().toString().trim().equals("")) {
-			Toast.makeText(getApplicationContext(), "CoolingCelsius should not be empty",
+			Toast.makeText(getApplicationContext(), getResources().getString(R.string.CoolingCelsiusshouldnotempty),
 					Toast.LENGTH_SHORT).show();
 			/*coolingData.setError("CoolingCelsius is required!");*/
 		} else {
@@ -81,7 +82,7 @@ public class CommandActivity extends Activity {
 	public void getHeatingCelsius(View view) {
 		EditText heatingData = ((EditText) findViewById(R.id.editText20));
 		if (heatingData.getText().toString().trim().equals("")) {
-			Toast.makeText(getApplicationContext(), "HeatingCelsius should not be empty",
+			Toast.makeText(getApplicationContext(), getResources().getString(R.string.HeatingCelsiusshouldnotempty),
 					Toast.LENGTH_SHORT).show();
 			/*heatingData.setError("HeatingCelsius is required!");*/
 		} else {
@@ -125,7 +126,7 @@ public class CommandActivity extends Activity {
 
 			// Start Progress Dialog (Message)
 
-			dialog.setMessage("Logging..");
+			dialog.setMessage("Please wait");
 			dialog.show();
 
 		}
@@ -157,10 +158,10 @@ public class CommandActivity extends Activity {
 
 			if (pcontent.equalsIgnoreCase("Success")) {
 				Toast.makeText(getApplicationContext(),
-						"Command is Updated Successfully", Toast.LENGTH_SHORT)
+						getResources().getString(R.string.CommandisUpdated), Toast.LENGTH_SHORT)
 						.show();
 			} else {
-				Toast.makeText(getApplicationContext(), "Connection error",
+				Toast.makeText(getApplicationContext(), getResources().getString(R.string.Connectionerror),
 						Toast.LENGTH_SHORT).show();
 			}
 			// Close progress dialog

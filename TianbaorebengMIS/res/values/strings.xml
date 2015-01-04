@@ -11,6 +11,9 @@
         <item>Cooling Mode</item>
         <item>Auto Mode</item>
     </string-array>
+<string name="HeatingMode">Heating Mode</string>
+<string name="CoolingMode">Cooling Mode</string>
+<string name="AutoMode">Auto Mode</string>
 
     <string name="title_activity_device_state">DeviceStateActivity</string>
     <string name="title_activity_command">CommandActivity</string>
@@ -54,5 +57,9 @@
     <!-- Error Message and Success Messages -->
 
     <string name="pleaseselectchoice">Please select choice</string>
+    <string name="CoolingCelsiusshouldnotempty">CoolingCelsius should not be empty</string>
+    <string name="HeatingCelsiusshouldnotempty">HeatingCelsius should not be empty</string>
+    <string name="CommandisUpdated">Command is inserted Successfully</string>
+    <string name="Connectionerror">Connection error</string>
 
 </resources>

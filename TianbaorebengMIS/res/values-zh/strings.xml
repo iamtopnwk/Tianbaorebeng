@@ -11,7 +11,11 @@
         <item>制冷温度</item>
         <item>运行模式</item>
     </string-array>
-
+    
+<string name="HeatingMode">制热温度</string>
+<string name="CoolingMode">制冷温度</string>
+<string name="AutoMode">运行模式</string>
+    
     <string name="title_activity_device_state">设备信息模块</string>
     <string name="title_activity_command">设备控制模块</string>
 <!--Command Page  -->
@@ -53,6 +57,11 @@
     <string name="Remark">备注:</string>
     <!-- Error Message and Success Messages -->
 
-    <string name="pleaseselectchoice">Please select choice</string>
+     <string name="pleaseselectchoice">请选择</string>
+    <string name="CoolingCelsiusshouldnotempty">制冷温度 不能是空</string>
+    <string name="HeatingCelsiusshouldnotempty">制热温度 不能是空</string>
+    <string name="CommandisUpdated">插入成功</string>
+    <string name="Connectionerror">连接错误</string>
+    
 
 </resources>
