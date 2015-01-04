@@ -32,6 +32,7 @@ public class CommandActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_command);
+		deviceId="1";
 		serverURL = new HttpUrl().getUrl()
 				+ ":8080/Tianbaorebeng/rest/statusUpdate";
 	}
@@ -45,18 +46,15 @@ public class CommandActivity extends Activity {
 		} else if (runmodeData.getSelectedItem().toString().trim()
 				.equals(getResources().getString(R.string.HeatingMode))) {
 			command = "01 06 23 00 00 01";
-			deviceId = "1";
 			new LongOperation().execute(serverURL);
 
 		} else if (runmodeData.getSelectedItem().toString().trim()
 				.equals(getResources().getString(R.string.CoolingMode))) {
 			command = "01 06 23 00 00 02";
-			deviceId = "1";
 			new LongOperation().execute(serverURL);
 		} else if (runmodeData.getSelectedItem().toString().trim()
 				.equals(getResources().getString(R.string.AutoMode))) {
 			command = "01 06 23 00 00 03";
-			deviceId = "1";
 			new LongOperation().execute(serverURL);
 
 		}
@@ -72,7 +70,6 @@ public class CommandActivity extends Activity {
 		} else {
 			
 			command = "01 06 23 01 00 " + coolingData.getText().toString();
-			deviceId = "1";
 			coolingData.setText("");
 			new LongOperation().execute(serverURL);
 			
@@ -87,7 +84,6 @@ public class CommandActivity extends Activity {
 			/*heatingData.setError("HeatingCelsius is required!");*/
 		} else {
 			command = "01 06 23 02 00 " + heatingData.getText().toString();
-			deviceId = "1";
 			heatingData.setText("");
 			new LongOperation().execute(serverURL);
 		}
@@ -95,25 +91,21 @@ public class CommandActivity extends Activity {
 
 	public void postDeviceState(View view) {
 		command = "01 05 00 00 FF 00 8C 3A";
-		deviceId = "1";
 		new LongOperation().execute(serverURL);
 	}
 
 	public void postDeviceStop(View view) {
 		command = "01 05 00 01 FF 00 DD FA";
-		deviceId = "1";
 		new LongOperation().execute(serverURL);
 	}
 
 	public void postDeviceReset(View view) {
 		command = "01 05 00 08 FF 00 0D F8";
-		deviceId = "1";
 		new LongOperation().execute(serverURL);
 	}
 
 	public void postDeviceDefrost(View view) {
 		command = "01 05 00 10 FF 00 8D FF";
-		deviceId = "1";
 		new LongOperation().execute(serverURL);
 	}
 

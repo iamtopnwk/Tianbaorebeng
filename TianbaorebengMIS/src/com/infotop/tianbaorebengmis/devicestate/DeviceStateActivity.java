@@ -29,7 +29,7 @@ import android.widget.Toast;
 
 public class DeviceStateActivity extends Activity {
 	private String command;
-	private String serverPostURL;
+	private String deviceId;
 	private static final String TAG_ID = "id";
 	private static final String TAG_UUID = "uuid";
 
@@ -71,7 +71,6 @@ public class DeviceStateActivity extends Activity {
 	String serverURL1;
 	Button useBtn, banBtn;
 
-	private String deviceId;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -79,8 +78,9 @@ public class DeviceStateActivity extends Activity {
 		setContentView(R.layout.activity_device_state);
 		useBtn = (Button) findViewById(R.id.useStateBtn);
 		banBtn = (Button) findViewById(R.id.banStateBtn);
+		deviceId="1";
 		String serverURL = new HttpUrl().getUrl()
-				+ ":8080/Tianbaorebeng/rest/deviceList/1";
+				+ ":8080/Tianbaorebeng/rest/deviceList/"+deviceId;
 		serverURL1 = new HttpUrl().getUrl()
 				+ ":8080/Tianbaorebeng/rest/statusUpdate";
 		// serverPostURL=new HttpUrl().getUrl()+
@@ -113,20 +113,8 @@ public class DeviceStateActivity extends Activity {
 		@Override
 		protected Void doInBackground(String... urls) {
 			String pcontent;
-			String jsonData = "";
 			// Send data
 			try {
-
-				/*
-				 * HttpServiceHandler hs = new HttpServiceHandler(); JSONObject
-				 * json = new JSONObject(); json.accumulate("command", command);
-				 * 
-				 * jsonData = json.toString();
-				 * System.out.println("Json Data for posting:" + jsonData);
-				 * pcontent = hs.httpPost(urls[0], jsonData);
-				 * System.out.println("Executed data:" + pcontent);
-				 * dialog.dismiss();
-				 */
 				HttpServiceHandler hs = new HttpServiceHandler();
 				pcontent = hs.httpContent(urls[0]);
 				System.out.println("*********Content*******");
@@ -237,14 +225,12 @@ public class DeviceStateActivity extends Activity {
 
 	public void getUseButton(View view) {
 		command = "01 03 23 20 FF FF " + address;
-		deviceId = "1";
 		new PostOperation().execute(serverURL1);
 
 	}
 
 	public void getBanButton(View view) {
 		command = "01 06 23 20 00 00 " + address;
-		deviceId = "1";
 		new PostOperation().execute(serverURL1);
 		
 	}
