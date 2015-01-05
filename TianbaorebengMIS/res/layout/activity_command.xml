@@ -139,6 +139,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/start"
         android:layout_marginLeft="73dp"
+        android:textColor="#ffffff"
         android:text="@string/start"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -160,6 +161,7 @@
         android:layout_alignBaseline="@+id/textView2"
         android:layout_alignBottom="@+id/textView2"
         android:layout_alignLeft="@+id/textView5"
+        android:textColor="#ffffff"
         android:text="@string/stop"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -178,8 +180,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView2"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/reset"
         android:layout_marginBottom="25dp"
+        android:textColor="#ffffff"
         android:text="@string/reset"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -199,8 +202,9 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+          android:layout_below="@+id/defrost"
         android:layout_alignRight="@+id/defrost"
+        android:textColor="#ffffff"
         android:layout_marginBottom="25dp"
         android:text="@string/defrost"
         android:textAppearance="?android:attr/textAppearanceSmall" />
