@@ -67,6 +67,9 @@
     <string name="HeatingCelsiusshouldnotempty">制热温度 不能是空</string>
     <string name="CommandisUpdated">插入成功</string>
     <string name="Connectionerror">连接错误</string>
-    
+     <string name="loginerror">凭据无效</string>
+     <!-- Login Page -->
+    <string name="title_activity_login">登录活动</string>
+    <string name="Usignin">登录</string>
 
 </resources>

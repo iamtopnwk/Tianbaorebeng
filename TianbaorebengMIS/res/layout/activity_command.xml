@@ -16,26 +16,6 @@
             android:src="@drawable/ic_top" />
     </TableRow>
 
-    <!--
-    <TableRow
-        android:id="@+id/tableRow0"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tableRow100"
-        android:gravity="center_horizontal" >
-
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/Command"
-            android:textSize="24sp"
-            android:textStyle="bold" >
-        </TextView>
-    </TableRow>
-    -->
-
     <TableRow
         android:id="@+id/tableRow111"
         android:layout_width="match_parent"
@@ -52,20 +32,21 @@
 
         <Spinner
             android:id="@+id/spinner1"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
+            android:layout_width="120dp"
+            android:layout_height="35dp"
             android:layout_marginLeft="43dp"
             android:layout_marginTop="5dp"
-            android:background="#ffffff"
+            android:background="@drawable/edittextshape"
             android:entries="@array/choice_arrays" />
-        <!-- android:prompt="@string/country_prompt" /> -->
 
         <Button
             android:id="@+id/runModeSettings"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="2dp"
+            android:background="@drawable/buttonshape1"
             android:onClick="getRunModeButton"
-            android:text="@string/setting" />
+            android:text="@string/setting"/>
     </TableRow>
 
     <!-- Row2 Column2 -->
@@ -74,7 +55,8 @@
         android:id="@+id/tableRow20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tableRow111" >
+        android:layout_below="@+id/tableRow111"
+        android:layout_marginTop="5dp" >
 
         <TextView
             android:id="@+id/textView20"
@@ -86,17 +68,19 @@
 
         <EditText
             android:id="@+id/editText20"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_edittext"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:background="@drawable/edittextshape"
             android:ems="10"
             android:hint="" >
         </EditText>
 
         <Button
             android:id="@+id/hCelsius"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="2dp"
+            android:background="@drawable/buttonshape1"
             android:onClick="getHeatingCelsius"
             android:text="@string/setting" />
     </TableRow>
@@ -107,7 +91,8 @@
         android:id="@+id/tableRow21"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tableRow20" >
+        android:layout_below="@+id/tableRow20"
+        android:layout_marginTop="5dp" >
 
         <TextView
             android:id="@+id/textView21"
@@ -119,17 +104,19 @@
 
         <EditText
             android:id="@+id/editText21"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_edittext"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:background="@drawable/edittextshape"
             android:ems="10"
             android:hint="" >
         </EditText>
 
         <Button
             android:id="@+id/cCelsius"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="2dp"
+            android:background="@drawable/buttonshape1"
             android:onClick="getCoolingCelsius"
             android:text="@string/setting" />
     </TableRow>

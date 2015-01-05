@@ -3,7 +3,7 @@
     android:id="@+id/tableLayout1"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#1a7f92">
+    android:background="#1a7f92" >
 
     <!-- Row1 Column1 -->
 
@@ -18,28 +18,26 @@
 
     <EditText
         android:id="@+id/editTextLoginUser"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
+       android:layout_width="220dp"
+        android:layout_height="40dp"
+        android:background="@drawable/edittextshape"
         android:layout_alignRight="@+id/editTextLoginPwd"
         android:layout_below="@+id/imageView1"
         android:layout_marginLeft="55dp"
         android:layout_marginTop="10dp"
-        android:background="#ffffff"
         android:drawableLeft="@drawable/ic_loginuser"
         android:ems="12"
-        android:hint=""
         android:inputType="text" >
-
     </EditText>
 
     <EditText
-          android:layout_below="@+id/editTextLoginUser"
         android:id="@+id/editTextLoginPwd"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
+       android:layout_width="220dp"
+        android:layout_height="40dp"
+        android:background="@drawable/edittextshape"
+        android:layout_below="@+id/editTextLoginUser"
         android:layout_marginLeft="55dp"
         android:layout_marginTop="5dp"
-        android:background="#ffffff"
         android:drawableLeft="@drawable/ic_loginpwd"
         android:ems="10"
         android:inputType="textPassword" >
@@ -47,14 +45,17 @@
 
     <!-- Row4 Column1 -->
 
-    <ImageView
-        android:layout_below="@+id/editTextLoginPwd"
+    <Button
         android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="95dp"
+        android:layout_width="220dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/editTextLoginPwd"
+        android:layout_marginLeft="55dp"
         android:layout_marginTop="5dp"
+        android:background="@drawable/buttonshape"
         android:onClick="getSigninPage"
-        android:src="@drawable/ic_loginbutton" />
+        android:text="@string/Usignin"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
 
 </RelativeLayout>
