@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
+    android:layout_height="fill_parent"
+    android:background="#1a7f92" >
 
     <TableRow
         android:id="@+id/tableRow100"
@@ -10,12 +11,12 @@
         android:gravity="center_horizontal" >
 
         <ImageView
-            android:layout_width="fill_parent"
-            android:layout_gravity="center"
-            android:layout_span="5"
-            android:src="@drawable/u148" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_top" />
     </TableRow>
 
+    <!--
     <TableRow
         android:id="@+id/tableRow0"
         android:layout_width="match_parent"
@@ -33,6 +34,7 @@
             android:textStyle="bold" >
         </TextView>
     </TableRow>
+    -->
 
     <TableRow
         android:id="@+id/tableRow111"
@@ -42,22 +44,23 @@
 
         <TextView
             android:id="@+id/TextView015"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:padding="4dip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="@string/RunMode"
-            android:textColor="#000000"
-            android:textSize="17dip"
-            android:textStyle="bold" />
+            android:textColor="#ffffff"
+            android:textSize="16sp" />
 
         <Spinner
             android:id="@+id/spinner1"
             android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginLeft="43dp"
+            android:layout_marginTop="5dp"
+            android:background="#ffffff"
             android:entries="@array/choice_arrays" />
         <!-- android:prompt="@string/country_prompt" /> -->
 
-         <Button
+        <Button
             android:id="@+id/runModeSettings"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -71,14 +74,14 @@
         android:id="@+id/tableRow20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tableRow0"
-        android:paddingTop="110dp" >
+        android:layout_below="@+id/tableRow111" >
 
         <TextView
             android:id="@+id/textView20"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/HeatingCelsius"
+            android:textColor="#ffffff"
             android:textSize="16sp" />
 
         <EditText
@@ -104,14 +107,14 @@
         android:id="@+id/tableRow21"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tableRow20"
-        android:paddingTop="0dp" >
+        android:layout_below="@+id/tableRow20" >
 
         <TextView
             android:id="@+id/textView21"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/CoolingCelsius"
+            android:textColor="#ffffff"
             android:textSize="16sp" />
 
         <EditText
@@ -133,124 +136,86 @@
 
     <Button
         android:id="@+id/start"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tableRow21"
         android:layout_marginLeft="60dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/ic_start"
         android:onClick="postDeviceState"
-        android:paddingTop="15dp"
-        android:text="@string/start" />
+        android:paddingTop="15dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/start"
+        android:layout_marginLeft="73dp"
+        android:text="@string/start"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <Button
         android:id="@+id/stop"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tableRow21"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
         android:layout_toRightOf="@+id/start"
-        android:onClick="postDeviceStop"
-        android:text="@string/stop" />
+        android:background="@drawable/ic_stop"
+        android:onClick="postDeviceStop" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignLeft="@+id/textView5"
+        android:text="@string/stop"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <Button
         android:id="@+id/reset"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/start"
         android:layout_marginLeft="60dp"
-        android:onClick="postDeviceReset"
-        android:text="@string/reset" />
+        android:layout_marginTop="20dp"
+        android:background="@drawable/ic_reset"
+        android:onClick="postDeviceReset" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="25dp"
+        android:text="@string/reset"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <Button
         android:id="@+id/defrost"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/stop"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
         android:layout_toRightOf="@+id/reset"
-        android:onClick="postDeviceDefrost"
-        android:text="@string/defrost" >
+        android:background="@drawable/ic_defrost"
+        android:onClick="postDeviceDefrost" >
     </Button>
 
-</RelativeLayout>
-<!--
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-   android:layout_width="fill_parent"
-   android:layout_height="fill_parent">
-<TableLayout
-           
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:shrinkColumns="*"
-            android:layout_marginTop="60dp"  
-            android:stretchColumns="*" 
-            android:background="#ffffff">
- 
-                      
-                       <TableRow
-                            android:id="@+id/tableRow111"
-                            android:layout_height="wrap_content"
-                            android:layout_width="match_parent">
-                            
-                            <TextView 
-                                android:id="@+id/TextView015" android:text="Run Mode"
-                                android:textStyle="bold"
-                                android:textSize="17dip"
-                                android:layout_weight="1" 
-                                android:textColor="#000000"
-                                android:padding="4dip" android:gravity="center"/>
-                             <Spinner
-                             android:id="@+id/spinner1"
-                             android:layout_width="match_parent"
-                             android:layout_height="wrap_content"
-                             android:entries="@array/country_arrays"
-                             android:prompt="@string/country_prompt" />
- 
-                           
-                            <Button
-                                android:id="@+id/TextView17" android:text="Settings"
-                                
-                                android:textSize="17dip"
-                                android:layout_weight="1" 
-                                android:textColor="#000000"
-                                android:padding="4dip" android:gravity="center"/>
-                         
-                        </TableRow>
-     <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:shrinkColumns="*"
-            android:layout_marginTop="200dp"  
-            android:stretchColumns="*" 
-            android:background="#ffffff">
-        
-                       <TableRow
-        android:id="@+id/tableRow2"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="15dp" >
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/defrost"
+        android:layout_marginBottom="25dp"
+        android:text="@string/defrost"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Heating celsius"
-            android:textSize="16sp" />
-
-        <EditText
-            android:id="@+id/editText1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint=""
-            android:ems="10">
-             <Button
-                                 android:text="DeviceControl"
-                                android:textStyle="bold"
-                                android:textSize="17dip"
-                                android:layout_weight="1" 
-                                android:textColor="#000000"
-                                android:padding="4dip" android:gravity="center"/>
-                         
-        </EditText>
-    </TableRow></TableLayout> 
-                        </TableLayout>
-                        </ScrollView>
--->
-
+</RelativeLayout>
