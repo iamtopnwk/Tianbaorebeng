@@ -11,17 +11,17 @@
         <item>Cooling Mode</item>
         <item>Auto Mode</item>
     </string-array>
-<string name="HeatingMode">Heating Mode</string>
-<string name="CoolingMode">Cooling Mode</string>
-<string name="AutoMode">Auto Mode</string>
 
+    <string name="HeatingMode">Heating Mode</string>
+    <string name="CoolingMode">Cooling Mode</string>
+    <string name="AutoMode">Auto Mode</string>
     <string name="title_activity_device_state">DeviceStateActivity</string>
     <string name="title_activity_command">CommandActivity</string>
     
-     <!-- DeviceList Page -->
+    <!-- DeviceList Page -->
     <string name="DeviceList">DeviceList</string>
     <string name="Operation">Operation</string>
-    
+
     <!-- Command Page -->
     <string name="Command">Command</string>
     <string name="RunMode">Run Mode</string>
@@ -66,5 +66,8 @@
     <string name="HeatingCelsiusshouldnotempty">HeatingCelsius should not be empty</string>
     <string name="CommandisUpdated">Command is inserted Successfully</string>
     <string name="Connectionerror">Connection error</string>
-
+    <string name="loginerror">Invalid Credentials</string>
+    <!-- Login Page -->
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="Usignin">Sign in</string>
 </resources>

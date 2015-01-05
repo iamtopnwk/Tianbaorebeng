@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tableLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="10dp"
+    android:shrinkColumns="*"
+    android:stretchColumns="*" 
+    android:background="#6E6EFF">
+
+    <!-- Row1 Column1 -->
+
+ <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="500dp"
+            android:layout_height="150dp"
+            android:contentDescription="@string/app_name"
+            android:gravity="center"
+            android:src="@drawable/ic_title" >
+        </ImageView>
+  
+
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <EditText
+            android:layout_marginLeft="25dp"
+            android:id="@+id/editTextLoginUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="15"
+            android:inputType="text"
+            android:drawableLeft="@drawable/ic_loginuser"
+            android:hint="" >
+        </EditText>
+    </TableRow>
+
+    <!-- Row3 Column3 -->
+
+    <TableRow
+        android:id="@+id/tableRow3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        
+        <EditText
+            android:id="@+id/editTextLoginPwd"
+            android:layout_marginLeft="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="15"
+            android:inputType="textPassword" 
+            android:drawableLeft="@drawable/ic_loginpwd">
+        </EditText>
+    </TableRow>
+
+    <!-- Row4 Column1 -->
+
+    <Button
+         android:layout_marginTop="15dp"
+         android:layout_marginLeft="25dp"
+        android:id="@+id/button1"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:onClick="getSigninPage"
+        android:text="@string/Usignin" />
+
+</TableLayout>
