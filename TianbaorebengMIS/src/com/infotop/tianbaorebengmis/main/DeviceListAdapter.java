@@ -7,12 +7,14 @@ import com.example.tianbaorebengmis.R;
 
 
 
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -43,7 +45,7 @@ public class DeviceListAdapter extends ArrayAdapter<String> {
 			holder = new ViewHolder();
 			holder.dName = (TextView) rowView.findViewById(R.id.devicename);
 			holder.uName = (TextView) rowView.findViewById(R.id.uname);
-			
+			holder.btn=(Button) rowView.findViewById(R.id.useDeviceBtn);
 			
 			rowView.setTag(holder);
 		} else {
@@ -52,7 +54,7 @@ public class DeviceListAdapter extends ArrayAdapter<String> {
 		
 		holder.dName.setText(devName.get(position));
 		holder.uName.setText(useName.get(position));
-		
+		holder.btn.setTag(position);
 		return rowView;
 
 	}
@@ -61,6 +63,7 @@ public class DeviceListAdapter extends ArrayAdapter<String> {
 	private class ViewHolder {
 		public TextView dName;
 		public TextView uName;
+		public Button btn;
 		
 		
 	}

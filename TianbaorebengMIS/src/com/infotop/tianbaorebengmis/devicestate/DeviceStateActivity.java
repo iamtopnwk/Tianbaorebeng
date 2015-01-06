@@ -71,6 +71,10 @@ public class DeviceStateActivity extends Activity {
 	Button useBtn, banBtn;
 
 	ListView list1;
+	private ArrayList<String> modName = new ArrayList<String>();
+	private ArrayList<String> modAddress = new ArrayList<String>();
+	private ArrayList<String> modMstate = new ArrayList<String>();
+	String[] dId;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -104,10 +108,7 @@ public class DeviceStateActivity extends Activity {
 				DeviceStateActivity.this);
 		ModuleListAdapter moduleAdapter;
 
-		private ArrayList<String> modName = new ArrayList<String>();
-		private ArrayList<String> modAddress = new ArrayList<String>();
-		private ArrayList<String> modMstate = new ArrayList<String>();
-		String[] dId;
+		
 
 		protected void onPreExecute() {
 			// NOTE: You can call UI Element here.
@@ -237,27 +238,17 @@ public class DeviceStateActivity extends Activity {
 				Log.v("test", ff);
 			}
 			list1.setAdapter(moduleAdapter);
-
-		
-		list1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
-				System.out.println("Position of that button"+position);
-				address=modAddress.get(position);
-			}
-		});
 		}
 	}
 
 	public void getUseButton(View view) {
-		command = "01 03 23 20 FF FF " + address;
+		command = "01 03 23 20 FF FF " + modAddress.get((Integer)(view.getTag()));
 		new PostOperation().execute(serverURL1);
 
 	}
 
 	public void getBanButton(View view) {
-		command = "01 06 23 20 00 00 " + address;
+		command = "01 06 23 20 00 00 " + modAddress.get((Integer)(view.getTag()));
 		new PostOperation().execute(serverURL1);
 
 	}

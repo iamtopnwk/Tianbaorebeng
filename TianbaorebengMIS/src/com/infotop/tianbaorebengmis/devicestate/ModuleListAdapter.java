@@ -82,6 +82,8 @@ public class ModuleListAdapter extends BaseAdapter {
 		holder.dName.setText(name.get(position));
 		holder.uaddress.setText(address.get(position));
 		holder.mstate.setText(mstate.get(position));
+		holder.btnUse.setTag(position);
+		holder.btnBan.setTag(position);
 		if (mstate.get(position).equals("0")) {
 			holder.btnUse.setEnabled(false);
 			holder.btnBan.setEnabled(true);

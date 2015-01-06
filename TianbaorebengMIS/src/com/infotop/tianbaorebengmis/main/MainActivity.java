@@ -43,6 +43,7 @@ public class MainActivity extends Activity {
 	private static final String TAG_UUID = "uuid";
 	//private List<Device> listDe = new ArrayList<Device>();
 	private  Context context;
+	String[] dId;
 	/*String[] userName;
 	String[] deviceName;*/
 	
@@ -65,7 +66,7 @@ public class MainActivity extends Activity {
 		DeviceListAdapter listAdapter;
 		private ArrayList<String> devName=new ArrayList<String>();
 		private ArrayList<String> useName=new ArrayList<String>();
-		String[] dId;
+		
         
 		private ProgressDialog dialog = new ProgressDialog(
 				MainActivity.this);
@@ -164,6 +165,15 @@ public class MainActivity extends Activity {
 	
 		}}
 	
+	public void getDeviceButton(View view){
+		System.out.println("Position id is"+(Integer)view.getTag());
+		Intent i = new Intent(MainActivity.this,
+				DeviceStateActivity.class);
+		//i.putStringArrayListExtra("productData", productData);
+		i.putExtra("dId",dId[(Integer)view.getTag()]);
+		System.out.println("kkkkkkkkkkkkkkk"+dId[(Integer)view.getTag()]);
+		startActivity(i);
+	}
 	
 	public void next(View view){
 		Intent i=new Intent(this,DeviceStateActivity.class);
