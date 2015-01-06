@@ -6,10 +6,10 @@
     android:scrollbars="vertical" >
 
     <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
         android:id="@+id/testimage1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/u148" />
+        android:src="@drawable/ic_top" />
 
     <TextView
         android:id="@+id/textView1"
@@ -230,9 +230,8 @@
         android:layout_marginTop="2dp"
         android:layout_toRightOf="@+id/textView11"
         android:background="@drawable/edittextshape" />
-    
-   
-<TextView
+
+    <TextView
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -242,40 +241,43 @@
         android:text="@string/Name"
         android:textColor="#FFFFFF"
         android:textSize="16sp" />
-<TextView
+
+    <TextView
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView11"
-        android:layout_toRightOf="@+id/textView12"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/textView12"
         android:text="@string/Address"
         android:textColor="#FFFFFF"
         android:textSize="16sp" />
-<TextView
+
+    <TextView
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView11"
-        android:layout_toRightOf="@+id/textView13"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/textView13"
         android:text="@string/MState"
         android:textColor="#FFFFFF"
         android:textSize="16sp" />
-<TextView
+
+    <TextView
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView11"
-        android:layout_toRightOf="@+id/textView14"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/textView14"
         android:text="@string/Action"
         android:textColor="#FFFFFF"
         android:textSize="16sp" />
- 
+
     <ListView
         android:id="@+id/module_list"
         android:layout_width="wrap_content"

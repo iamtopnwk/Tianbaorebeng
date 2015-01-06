@@ -1,66 +1,39 @@
-<TableLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:shrinkColumns="*"  android:stretchColumns="*" >
-                        <TableRow
-                            android:id="@+id/tableRow1"
-                            android:layout_height="wrap_content"
-                            android:layout_width="match_parent">
-                            <TextView
-                                android:id="@+id/devicename" 
-                                android:layout_weight="1"  
-                                android:width="60dp"
-                                android:textColor="#000000"                                
-                                 android:gravity="center"/>
-                            <TextView
-                                android:id="@+id/uname" 
-                                android:layout_weight="2"  
-                                android:width="60dp"
-                                android:textColor="#000000" 
-                                android:gravity="center"/>
-                            
-                             <TextView
-                                android:id="@+id/check" 
-                                android:layout_weight="2"  
-                                android:width="60dp"
-                                android:textColor="#000000" 
-                                android:gravity="center"
-                                android:text="check"/>                         
-                        </TableRow>
-                        
-                        
-                       
-      </TableLayout>
-
-
-
-<!-- <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="55dip"
-    android:orientation="vertical" >
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:shrinkColumns="*"
+    android:stretchColumns="*" >
 
-    <TextView
-        android:id="@+id/devicenameTwo"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:textColor="#000000"
-        android:width="60dp" />
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
 
-    <TextView
-        android:id="@+id/unameTwo"
-        android:layout_weight="2"
-        android:gravity="center"
-        android:textColor="#000000"
-        android:width="60dp" />
+        <TextView
+            android:id="@+id/devicename"
+            android:layout_weight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="right"
+            android:padding="5dip"
+            android:text="1"
+            android:textColor="#000000" />
 
-    <Buttton
-        android:id="@+id/op"
-        android:layout_weight="2"
-        android:gravity="center"
-        android:width="60dp" />
+        <TextView
+            android:id="@+id/uname"
+            android:background="@drawable/cell_shape"
+            android:gravity="right"
+            android:padding="5dip"
+            android:text="1"
+            android:textColor="#000000" />
 
-</LinearLayout>
- -->
+        <Button
+            android:id="@+id/useDeviceBtn"
+            android:layout_width="65dp"
+            android:layout_height="50dp"
+            android:onClick="getDeviceButton"
+            android:text="@string/use" />
+    </TableRow>
+
+</TableLayout>
