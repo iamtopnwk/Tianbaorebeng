@@ -1,31 +1,30 @@
 package com.infotop.tianbaorebengmis.devicestate;
 
-import java.lang.Character.UnicodeBlock;
+import java.util.ArrayList;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-
-import com.example.tianbaorebengmis.R;
-import com.example.tianbaorebengmis.R.id;
-import com.example.tianbaorebengmis.R.layout;
-import com.example.tianbaorebengmis.R.menu;
-import com.infotop.tianbaorebengmis.command.CommandActivity;
-import com.infotop.tianbaorebengmis.httpservice.HttpServiceHandler;
-import com.infotop.tianbaorebengmis.httpservice.HttpUrl;
-import com.infotop.tianbaorebengmis.main.MainActivity;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.tianbaorebengmis.R;
+import com.infotop.tianbaorebengmis.command.CommandActivity;
+import com.infotop.tianbaorebengmis.httpservice.HttpServiceHandler;
+import com.infotop.tianbaorebengmis.httpservice.HttpUrl;
 
 public class DeviceStateActivity extends Activity {
 	private String command;
@@ -71,15 +70,20 @@ public class DeviceStateActivity extends Activity {
 	String serverURL1;
 	Button useBtn, banBtn;
 
+	ListView list1;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_device_state);
+
+		list1 = (ListView) findViewById(R.id.module_list);
+
 		useBtn = (Button) findViewById(R.id.useStateBtn);
 		banBtn = (Button) findViewById(R.id.banStateBtn);
-		deviceId=getIntent().getExtras().getString("dId");
+		deviceId = getIntent().getExtras().getString("dId");
 		String serverURL = new HttpUrl().getUrl()
-				+ ":8080/Tianbaorebeng/rest/deviceList/"+deviceId;
+				+ ":8080/Tianbaorebeng/rest/deviceList/" + deviceId;
 		serverURL1 = new HttpUrl().getUrl()
 				+ ":8080/Tianbaorebeng/rest/statusUpdate";
 		// serverPostURL=new HttpUrl().getUrl()+
@@ -98,6 +102,12 @@ public class DeviceStateActivity extends Activity {
 	private class LongOperation extends AsyncTask<String, Void, Void> {
 		private ProgressDialog dialog = new ProgressDialog(
 				DeviceStateActivity.this);
+		ModuleListAdapter moduleAdapter;
+
+		private ArrayList<String> modName = new ArrayList<String>();
+		private ArrayList<String> modAddress = new ArrayList<String>();
+		private ArrayList<String> modMstate = new ArrayList<String>();
+		String[] dId;
 
 		protected void onPreExecute() {
 			// NOTE: You can call UI Element here.
@@ -121,43 +131,45 @@ public class DeviceStateActivity extends Activity {
 				JSONArray jsonArray;
 				jsonArray = new JSONArray(pcontent);
 
-				int length = jsonArray.length();
-				for (int i = 0; i < length; i++) {
-					JSONObject pc = jsonArray.getJSONObject(0);
-					JSONObject pc1 = jsonArray.getJSONObject(1);
-					JSONObject pc2 = jsonArray.getJSONObject(2);
+				//int length = jsonArray.length();
 
-					System.out.println("pc:" + pc);
+				// for (int i = 0; i < length; i++) {
+				JSONObject pc = jsonArray.getJSONObject(0);
+				JSONArray pc1 = jsonArray.getJSONArray(1);
+				JSONObject pc2 = jsonArray.getJSONObject(2);
 
-					deviceUnitState = pc.getString(TAG_DEVICE_UNIT_STATE);
-					moduleUse = pc.getString(TAG_MODULE_USE);
-					runMode = pc.getString(TAG_RUN_MODE);
-					moduleNum = pc.getString(TAG_MODULE_NUM);
-					environmentCelsius = pc.getString(TAG_ENVIRONMENT_CELSIUS);
-					heatingCelsius = pc.getString(TAG_HEATING_CELSIUS);
-					coolingCelsius = pc.getString(TAG_COOLING_CELSIUS);
-					totalRunDate = pc.getString(TAG_TOTAL_RUN_DATE);
-					effluentCelsius = pc.getString(TAG_EFFLUENT_CELSIUS);
-					rewaterCelcius = pc.getString(TAG_REWATER_CELSIUS);
+				System.out.println("pc1:" + pc1);
 
-					name = pc1.getString(TAG_NAME);
-					address = pc1.getString(TAG_ADDRESS);
-					mstate = pc1.getString(TAG_MSTATE);
+				deviceUnitState = pc.getString(TAG_DEVICE_UNIT_STATE);
+				moduleUse = pc.getString(TAG_MODULE_USE);
+				runMode = pc.getString(TAG_RUN_MODE);
+				moduleNum = pc.getString(TAG_MODULE_NUM);
+				environmentCelsius = pc.getString(TAG_ENVIRONMENT_CELSIUS);
+				heatingCelsius = pc.getString(TAG_HEATING_CELSIUS);
+				coolingCelsius = pc.getString(TAG_COOLING_CELSIUS);
+				totalRunDate = pc.getString(TAG_TOTAL_RUN_DATE);
+				effluentCelsius = pc.getString(TAG_EFFLUENT_CELSIUS);
+				rewaterCelcius = pc.getString(TAG_REWATER_CELSIUS);
+				int length1 = pc1.length();
+				for (int j = 0; j < length1; j++) {
+					JSONObject op1 = pc1.getJSONObject(j);
+					System.out.println("op1:" + op1);
+					modName.add(op1.getString(TAG_NAME));
+					modAddress.add(op1.getString(TAG_ADDRESS));
+					modMstate.add(op1.getString(TAG_MSTATE));
 
-					deviceName = pc2.getString(TAG_DEVICE_NAME);
-					moduleNumber = pc2.getString(TAG_MODULE_NUMBER);
-					beginDate = pc2.getString(TAG_BEGIN_DATE);
-					userName = pc2.getString(TAG_USER_NAME);
-					userIphone = pc2.getString(TAG_USER_IPHONE);
-					userMail = pc2.getString(TAG_USER_MAIL);
-					userAddress = pc2.getString(TAG_USER_ADDRESS);
-					remark = pc2.getString(TAG_REMARK);
-					if (mstate.equals("0")) {
-						useBtn.setEnabled(false);
-					} else if (mstate.equals("1")) {
-						banBtn.setEnabled(false);
-					}
 				}
+
+				// deviceName = pc2.getString(TAG_DEVICE_NAME);
+				// moduleNumber = pc2.getString(TAG_MODULE_NUMBER);
+				// beginDate = pc2.getString(TAG_BEGIN_DATE);
+				// userName = pc2.getString(TAG_USER_NAME);
+				// userIphone = pc2.getString(TAG_USER_IPHONE);
+				// userMail = pc2.getString(TAG_USER_MAIL);
+				// userAddress = pc2.getString(TAG_USER_ADDRESS);
+				// remark = pc2.getString(TAG_REMARK);
+
+				// }
 
 			} catch (Exception ex) {
 				System.out.println("Exception e:" + ex.getMessage());
@@ -181,18 +193,19 @@ public class DeviceStateActivity extends Activity {
 			TextView txt9 = (TextView) findViewById(R.id.effluentCelsius);
 			TextView txt10 = (TextView) findViewById(R.id.rewaterCelsius);
 
-			TextView txt11 = (TextView) findViewById(R.id.name_tb_module);
-			TextView txt12 = (TextView) findViewById(R.id.address_tb_module);
-			TextView txt13 = (TextView) findViewById(R.id.mastate_tb_module);
+			// TextView txt11 = (TextView) findViewById(R.id.name_tb_module);
+			// TextView txt12 = (TextView) findViewById(R.id.address_tb_module);
+			// TextView txt13 = (TextView) findViewById(R.id.mastate_tb_module);
 
-			TextView txt14 = (TextView) findViewById(R.id.deviceName);
-			TextView txt15 = (TextView) findViewById(R.id.moduleNumberTbDevice);
-			TextView txt16 = (TextView) findViewById(R.id.beginDate);
-			TextView txt17 = (TextView) findViewById(R.id.userName);
-			TextView txt18 = (TextView) findViewById(R.id.userIphone);
-			TextView txt19 = (TextView) findViewById(R.id.userMail);
-			TextView txt20 = (TextView) findViewById(R.id.userAddress);
-			TextView txt21 = (TextView) findViewById(R.id.remark);
+			// TextView txt14 = (TextView) findViewById(R.id.deviceName);
+			// TextView txt15 = (TextView)
+			// findViewById(R.id.moduleNumberTbDevice);
+			// TextView txt16 = (TextView) findViewById(R.id.beginDate);
+			// TextView txt17 = (TextView) findViewById(R.id.userName);
+			// TextView txt18 = (TextView) findViewById(R.id.userIphone);
+			// TextView txt19 = (TextView) findViewById(R.id.userMail);
+			// TextView txt20 = (TextView) findViewById(R.id.userAddress);
+			// TextView txt21 = (TextView) findViewById(R.id.remark);
 
 			txt1.setText(deviceUnitState);
 			txt2.setText(moduleUse);
@@ -205,21 +218,36 @@ public class DeviceStateActivity extends Activity {
 			txt9.setText(effluentCelsius);
 			txt10.setText(rewaterCelcius);
 
-			txt11.setText(name);
-			txt12.setText(address);
-			txt13.setText(mstate);
+			// txt11.setText(name);
+			// txt12.setText(address);
+			// txt13.setText(mstate);
 
-			txt14.setText(deviceName);
-			txt15.setText(moduleNumber);
-			txt16.setText(beginDate);
-			txt17.setText(userName);
-			txt18.setText(userIphone);
-			txt19.setText(userMail);
-			txt20.setText(userAddress);
-			txt21.setText(remark);
+			// txt14.setText(deviceName);
+			// txt15.setText(moduleNumber);
+			// txt16.setText(beginDate);
+			// txt17.setText(userName);
+			// txt18.setText(userIphone);
+			// txt19.setText(userMail);
+			// txt20.setText(userAddress);
+			// txt21.setText(remark);
 
+			moduleAdapter = new ModuleListAdapter(DeviceStateActivity.this,
+					modName, modAddress, modMstate);
+			for (String ff : modName) {
+				Log.v("test", ff);
+			}
+			list1.setAdapter(moduleAdapter);
+
+		
+		list1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				System.out.println("Position of that button"+position);
+				address=modAddress.get(position);
+			}
+		});
 		}
-
 	}
 
 	public void getUseButton(View view) {
@@ -231,7 +259,7 @@ public class DeviceStateActivity extends Activity {
 	public void getBanButton(View view) {
 		command = "01 06 23 20 00 00 " + address;
 		new PostOperation().execute(serverURL1);
-		
+
 	}
 
 	private class PostOperation extends AsyncTask<String, Void, Void> {
@@ -290,7 +318,7 @@ public class DeviceStateActivity extends Activity {
 
 	public void next1(View view) {
 		Intent i = new Intent(this, CommandActivity.class);
-		i.putExtra("dId",deviceId);
+		i.putExtra("dId", deviceId);
 		startActivity(i);
 	}
 

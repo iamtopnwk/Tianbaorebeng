@@ -17,7 +17,7 @@
     <string name="AutoMode">Auto Mode</string>
     <string name="title_activity_device_state">DeviceStateActivity</string>
     <string name="title_activity_command">CommandActivity</string>
-    
+
     <!-- DeviceList Page -->
     <string name="DeviceList">DeviceList</string>
     <string name="Operation">Operation</string>
@@ -41,6 +41,7 @@
     <string name="DeviceRunDateintotally">Device Run Date in totally</string>
     <string name="EvaporationEffluentCelsius">Evaporation Effluent Celsius</string>
     <string name="EvaporationRewaterCelsius">Evaporation Rewater Celsius</string>
+    
     <string name="Name">Name</string>
     <string name="Address">Address</string>
     <string name="MState">MState</string>
@@ -49,6 +50,7 @@
     <string name="ban">ban</string>
     <string name="use1">(use)</string>
     <string name="DeviceState">DeviceState</string>
+    
     <string name="DeviceControl">DeviceControl</string>
     <string name="Device">Device</string>
     <string name="DeviceName">Device Name:</string>
@@ -59,6 +61,7 @@
     <string name="UserMail">User Mail:</string>
     <string name="UserAddress">User Address:</string>
     <string name="Remark">Remark:</string>
+
     <!-- Error Message and Success Messages -->
 
     <string name="pleaseselectchoice">Please select choice</string>
@@ -70,4 +73,6 @@
     <!-- Login Page -->
     <string name="title_activity_login">LoginActivity</string>
     <string name="Usignin">Sign in</string>
+    <string name="title_activity_device">DeviceActivity</string>
+
 </resources>
