@@ -1,4 +1,5 @@
 package com.infotop.tianbaorebengmis.device;
+
 import java.util.ArrayList;
 
 import org.json.JSONArray;
@@ -28,7 +29,7 @@ import com.infotop.tianbaorebengmis.devicestate.ModuleListAdapter;
 import com.infotop.tianbaorebengmis.httpservice.HttpServiceHandler;
 import com.infotop.tianbaorebengmis.httpservice.HttpUrl;
 
-public class DeviceActivity extends Activity{
+public class DeviceActivity extends Activity {
 
 	private String command;
 	private String deviceId;
@@ -70,28 +71,21 @@ public class DeviceActivity extends Activity{
 			mstate, moduleNumber, beginDate, userIphone, userMail, userAddress,
 			remark;
 
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_device);
 
-		
-
-		
 		deviceId = getIntent().getExtras().getString("dId");
 		String serverURL = new HttpUrl().getUrl()
-				+ ":8080/Tianbaorebeng/rest/deviceList/1";
-		
+				+ ":8080/Tianbaorebeng/rest/deviceList/" + deviceId;
+
 		// Use AsyncTask execute Method To Prevent ANR Problem
 		new LongOperation().execute(serverURL);
 	}
 
-	
 	private class LongOperation extends AsyncTask<String, Void, Void> {
-		private ProgressDialog dialog = new ProgressDialog(
-				DeviceActivity.this);
-		
+		private ProgressDialog dialog = new ProgressDialog(DeviceActivity.this);
 
 		protected void onPreExecute() {
 			// NOTE: You can call UI Element here.
@@ -114,25 +108,20 @@ public class DeviceActivity extends Activity{
 				System.out.println(pcontent);
 				JSONArray jsonArray;
 				jsonArray = new JSONArray(pcontent);
-
-				
-				JSONObject pc = jsonArray.getJSONObject(0);
-				JSONArray pc1 = jsonArray.getJSONArray(1);
-				JSONObject pc2 = jsonArray.getJSONObject(2);
-
-				System.out.println("pc2:" + pc2);
-
-				
-
-				 deviceName = pc2.getString(TAG_DEVICE_NAME);
-				 moduleNumber = pc2.getString(TAG_MODULE_NUMBER);
-				 beginDate = pc2.getString(TAG_BEGIN_DATE);
-				 userName = pc2.getString(TAG_USER_NAME);
-				 userIphone = pc2.getString(TAG_USER_IPHONE);
-				 userMail = pc2.getString(TAG_USER_MAIL);
-				 userAddress = pc2.getString(TAG_USER_ADDRESS);
-				 remark = pc2.getString(TAG_REMARK);
-
+				try {
+					JSONObject pc2 = jsonArray.getJSONObject(2);
+					System.out.println("pc2:" + pc2);
+					deviceName = pc2.getString(TAG_DEVICE_NAME);
+					moduleNumber = pc2.getString(TAG_MODULE_NUMBER);
+					beginDate = pc2.getString(TAG_BEGIN_DATE);
+					userName = pc2.getString(TAG_USER_NAME);
+					userIphone = pc2.getString(TAG_USER_IPHONE);
+					userMail = pc2.getString(TAG_USER_MAIL);
+					userAddress = pc2.getString(TAG_USER_ADDRESS);
+					remark = pc2.getString(TAG_REMARK);
+				} catch (Exception e) {
+					System.out.println(e.getMessage());
+				}
 				// }
 
 			} catch (Exception ex) {
@@ -145,35 +134,28 @@ public class DeviceActivity extends Activity{
 		protected void onPostExecute(Void unused) {
 			dialog.dismiss();
 
-			
+			TextView txt14 = (TextView) findViewById(R.id.deviceName);
+			TextView txt15 = (TextView) findViewById(R.id.moduleNumberTbDevice);
+			TextView txt16 = (TextView) findViewById(R.id.beginDate);
+			TextView txt17 = (TextView) findViewById(R.id.userName);
+			TextView txt18 = (TextView) findViewById(R.id.userIphone);
+			TextView txt19 = (TextView) findViewById(R.id.userMail);
+			TextView txt20 = (TextView) findViewById(R.id.userAddress);
+			TextView txt21 = (TextView) findViewById(R.id.remark);
 
-			 TextView txt14 = (TextView) findViewById(R.id.deviceName);
-			 TextView txt15 = (TextView) findViewById(R.id.moduleNumberTbDevice);
-			 TextView txt16 = (TextView) findViewById(R.id.beginDate);
-			 TextView txt17 = (TextView) findViewById(R.id.userName);
-			 TextView txt18 = (TextView) findViewById(R.id.userIphone);
-			 TextView txt19 = (TextView) findViewById(R.id.userMail);
-			 TextView txt20 = (TextView) findViewById(R.id.userAddress);
-			 TextView txt21 = (TextView) findViewById(R.id.remark);
+			txt14.setText(deviceName);
+			txt15.setText(moduleNumber);
+			txt16.setText(beginDate);
+			txt17.setText(userName);
+			txt18.setText(userIphone);
+			txt19.setText(userMail);
+			txt20.setText(userAddress);
+			txt21.setText(remark);
 
-		
-			 txt14.setText(deviceName);
-			 txt15.setText(moduleNumber);
-			 txt16.setText(beginDate);
-			 txt17.setText(userName);
-			 txt18.setText(userIphone);
-			 txt19.setText(userMail);
-			 txt20.setText(userAddress);
-			 txt21.setText(remark);
-
-			
-	}
-
-	
+		}
 
 	}
 
-	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -194,6 +176,3 @@ public class DeviceActivity extends Activity{
 	}
 
 }
-
-
-

@@ -168,7 +168,7 @@ public class MainActivity extends Activity {
 	public void getDeviceButton(View view){
 		System.out.println("Position id is"+(Integer)view.getTag());
 		Intent i = new Intent(MainActivity.this,
-				DeviceStateActivity.class);
+				Tablayout.class);
 		//i.putStringArrayListExtra("productData", productData);
 		i.putExtra("dId",dId[(Integer)view.getTag()]);
 		System.out.println("kkkkkkkkkkkkkkk"+dId[(Integer)view.getTag()]);

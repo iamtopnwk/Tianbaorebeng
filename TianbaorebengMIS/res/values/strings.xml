@@ -41,7 +41,6 @@
     <string name="DeviceRunDateintotally">Device Run Date in totally</string>
     <string name="EvaporationEffluentCelsius">Evaporation Effluent Celsius</string>
     <string name="EvaporationRewaterCelsius">Evaporation Rewater Celsius</string>
-    
     <string name="Name">Name</string>
     <string name="Address">Address</string>
     <string name="MState">MState</string>
@@ -50,7 +49,6 @@
     <string name="ban">ban</string>
     <string name="use1">(use)</string>
     <string name="DeviceState">DeviceState</string>
-    
     <string name="DeviceControl">DeviceControl</string>
     <string name="Device">Device</string>
     <string name="DeviceName">Device Name:</string>
@@ -74,5 +72,6 @@
     <string name="title_activity_login">LoginActivity</string>
     <string name="Usignin">Sign in</string>
     <string name="title_activity_device">DeviceActivity</string>
+    <string name="title_activity_tablayout">Tablayout</string>
 
 </resources>

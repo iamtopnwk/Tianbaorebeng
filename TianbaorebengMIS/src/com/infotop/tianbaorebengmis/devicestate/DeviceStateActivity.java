@@ -135,43 +135,46 @@ public class DeviceStateActivity extends Activity {
 				//int length = jsonArray.length();
 
 				// for (int i = 0; i < length; i++) {
-				JSONObject pc = jsonArray.getJSONObject(0);
-				JSONArray pc1 = jsonArray.getJSONArray(1);
-				JSONObject pc2 = jsonArray.getJSONObject(2);
+				
+				JSONObject pc = null,pc2 = null;
+				JSONArray pc1 = null;
+				//int length = jsonArray.length();
 
-				System.out.println("pc1:" + pc1);
-
-				deviceUnitState = pc.getString(TAG_DEVICE_UNIT_STATE);
-				moduleUse = pc.getString(TAG_MODULE_USE);
-				runMode = pc.getString(TAG_RUN_MODE);
-				moduleNum = pc.getString(TAG_MODULE_NUM);
-				environmentCelsius = pc.getString(TAG_ENVIRONMENT_CELSIUS);
-				heatingCelsius = pc.getString(TAG_HEATING_CELSIUS);
-				coolingCelsius = pc.getString(TAG_COOLING_CELSIUS);
-				totalRunDate = pc.getString(TAG_TOTAL_RUN_DATE);
-				effluentCelsius = pc.getString(TAG_EFFLUENT_CELSIUS);
-				rewaterCelcius = pc.getString(TAG_REWATER_CELSIUS);
-				int length1 = pc1.length();
-				for (int j = 0; j < length1; j++) {
-					JSONObject op1 = pc1.getJSONObject(j);
-					System.out.println("op1:" + op1);
-					modName.add(op1.getString(TAG_NAME));
-					modAddress.add(op1.getString(TAG_ADDRESS));
-					modMstate.add(op1.getString(TAG_MSTATE));
-
+				// for (int i = 0; i < length; i++) {
+				try{
+				 pc = jsonArray.getJSONObject(0);
+				   deviceUnitState = pc.getString(TAG_DEVICE_UNIT_STATE);
+					moduleUse = pc.getString(TAG_MODULE_USE);
+					runMode = pc.getString(TAG_RUN_MODE);
+					moduleNum = pc.getString(TAG_MODULE_NUM);
+					environmentCelsius = pc.getString(TAG_ENVIRONMENT_CELSIUS);
+					heatingCelsius = pc.getString(TAG_HEATING_CELSIUS);
+					coolingCelsius = pc.getString(TAG_COOLING_CELSIUS);
+					totalRunDate = pc.getString(TAG_TOTAL_RUN_DATE);
+					effluentCelsius = pc.getString(TAG_EFFLUENT_CELSIUS);
+					rewaterCelcius = pc.getString(TAG_REWATER_CELSIUS);
+				}catch(Exception e){
+					System.out.println("Exception e:" + e.getMessage());
 				}
+				try{
+				 pc1 = jsonArray.getJSONArray(1);
+				 int length1 = pc1.length();
+					for (int j = 0; j < length1; j++) {
+						JSONObject op1 = pc1.getJSONObject(j);
+						System.out.println("op1:" + op1);
+						modName.add(op1.getString(TAG_NAME));
+						modAddress.add(op1.getString(TAG_ADDRESS));
+						modMstate.add(op1.getString(TAG_MSTATE));
 
-				// deviceName = pc2.getString(TAG_DEVICE_NAME);
-				// moduleNumber = pc2.getString(TAG_MODULE_NUMBER);
-				// beginDate = pc2.getString(TAG_BEGIN_DATE);
-				// userName = pc2.getString(TAG_USER_NAME);
-				// userIphone = pc2.getString(TAG_USER_IPHONE);
-				// userMail = pc2.getString(TAG_USER_MAIL);
-				// userAddress = pc2.getString(TAG_USER_ADDRESS);
-				// remark = pc2.getString(TAG_REMARK);
-
-				// }
-
+					}
+				}catch(Exception e){
+					System.out.println("Exception e:" + e.getMessage());
+				}
+				try{
+				 pc2 = jsonArray.getJSONObject(2);
+				}catch(Exception e){
+					System.out.println("Exception e:" + e.getMessage());
+				}
 			} catch (Exception ex) {
 				System.out.println("Exception e:" + ex.getMessage());
 			}
@@ -194,19 +197,6 @@ public class DeviceStateActivity extends Activity {
 			TextView txt9 = (TextView) findViewById(R.id.effluentCelsius);
 			TextView txt10 = (TextView) findViewById(R.id.rewaterCelsius);
 
-			// TextView txt11 = (TextView) findViewById(R.id.name_tb_module);
-			// TextView txt12 = (TextView) findViewById(R.id.address_tb_module);
-			// TextView txt13 = (TextView) findViewById(R.id.mastate_tb_module);
-
-			// TextView txt14 = (TextView) findViewById(R.id.deviceName);
-			// TextView txt15 = (TextView)
-			// findViewById(R.id.moduleNumberTbDevice);
-			// TextView txt16 = (TextView) findViewById(R.id.beginDate);
-			// TextView txt17 = (TextView) findViewById(R.id.userName);
-			// TextView txt18 = (TextView) findViewById(R.id.userIphone);
-			// TextView txt19 = (TextView) findViewById(R.id.userMail);
-			// TextView txt20 = (TextView) findViewById(R.id.userAddress);
-			// TextView txt21 = (TextView) findViewById(R.id.remark);
 
 			txt1.setText(deviceUnitState);
 			txt2.setText(moduleUse);
@@ -219,19 +209,7 @@ public class DeviceStateActivity extends Activity {
 			txt9.setText(effluentCelsius);
 			txt10.setText(rewaterCelcius);
 
-			// txt11.setText(name);
-			// txt12.setText(address);
-			// txt13.setText(mstate);
-
-			// txt14.setText(deviceName);
-			// txt15.setText(moduleNumber);
-			// txt16.setText(beginDate);
-			// txt17.setText(userName);
-			// txt18.setText(userIphone);
-			// txt19.setText(userMail);
-			// txt20.setText(userAddress);
-			// txt21.setText(remark);
-
+			
 			moduleAdapter = new ModuleListAdapter(DeviceStateActivity.this,
 					modName, modAddress, modMstate);
 			for (String ff : modName) {

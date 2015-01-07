@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_height="420dp"
     android:background="#1a7f92"
     android:scrollbars="vertical" >
 
     <ImageView
         android:id="@+id/testimage1"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/u148" />
+        android:layout_height="60dp"
+        android:src="@drawable/ic_top" />
 
     <TextView
         android:id="@+id/textView1"
@@ -191,5 +191,4 @@
         android:layout_toRightOf="@+id/textView9"
         android:background="@drawable/edittextshape1" />
 
-   
 </RelativeLayout>

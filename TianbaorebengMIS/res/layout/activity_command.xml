@@ -1,26 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_height="420dp"
     android:background="#1a7f92" >
 
-    <TableRow
-        android:id="@+id/tableRow100"
+    <ImageView
+        android:id="@+id/commandImage1"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal" >
-
-        <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="100dp"
-            android:src="@drawable/ic_top" />
-    </TableRow>
+        android:layout_height="60dp"
+        android:src="@drawable/ic_top" />
 
     <TableRow
         android:id="@+id/tableRow111"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="130dp" >
+        android:layout_marginTop="35dp"
+        android:layout_below="@+id/commandImage1" >
 
         <TextView
             android:id="@+id/TextView015"
@@ -46,7 +41,7 @@
             android:layout_marginLeft="2dp"
             android:background="@drawable/buttonshape1"
             android:onClick="getRunModeButton"
-            android:text="@string/setting"/>
+            android:text="@string/setting" />
     </TableRow>
 
     <!-- Row2 Column2 -->
@@ -139,9 +134,9 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/start"
         android:layout_marginLeft="73dp"
-        android:textColor="#ffffff"
         android:text="@string/start"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#ffffff" />
 
     <Button
         android:id="@+id/stop"
@@ -161,9 +156,9 @@
         android:layout_alignBaseline="@+id/textView2"
         android:layout_alignBottom="@+id/textView2"
         android:layout_alignLeft="@+id/textView5"
-        android:textColor="#ffffff"
         android:text="@string/stop"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#ffffff" />
 
     <Button
         android:id="@+id/reset"
@@ -182,9 +177,9 @@
         android:layout_alignLeft="@+id/textView2"
         android:layout_below="@+id/reset"
         android:layout_marginBottom="25dp"
-        android:textColor="#ffffff"
         android:text="@string/reset"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#ffffff" />
 
     <Button
         android:id="@+id/defrost"
@@ -202,11 +197,11 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-          android:layout_below="@+id/defrost"
         android:layout_alignRight="@+id/defrost"
-        android:textColor="#ffffff"
+        android:layout_below="@+id/defrost"
         android:layout_marginBottom="25dp"
         android:text="@string/defrost"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#ffffff" />
 
 </RelativeLayout>
