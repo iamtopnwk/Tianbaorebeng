@@ -37,8 +37,8 @@
 
         <Button
             android:id="@+id/useDeviceBtn"
-            android:layout_width="38dp"
-            android:layout_height="35dp"
+            android:layout_width="5dp"
+            android:layout_height="20dp"
             android:onClick="getDeviceButton"
             android:text="@string/View"
             android:background="@drawable/button_shape" />
