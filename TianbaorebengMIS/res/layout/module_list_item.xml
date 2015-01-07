@@ -41,17 +41,19 @@
 
                  <Button
                     android:id="@+id/useStateBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="38dp"
+                    android:layout_height="35dp"
                     android:onClick="getUseButton"
-                    android:text="@string/use" />
+                    android:text="@string/use"
+                    android:background="@drawable/button_shape" />
 
                 <Button
                     android:id="@+id/banStateBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="38dp"
+                    android:layout_height="35dp"
                     android:onClick="getBanButton"
-                    android:text="@string/ban" />
+                    android:text="@string/ban"
+                    android:background="@drawable/button_shape" />
                      
             </TableRow>
         

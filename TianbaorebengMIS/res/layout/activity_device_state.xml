@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="420dp"
+    android:layout_height="500dp"
     android:background="#1a7f92"
     android:scrollbars="vertical" >
 
@@ -17,6 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/testimage1"
         android:layout_marginLeft="5dp"
+        android:layout_marginTop="20dp"
         android:text="@string/DeviceUnitState"
         android:textColor="#FFFFFF"
         android:textSize="16sp" />
@@ -25,6 +26,7 @@
         android:id="@+id/deviceUnitState"
         android:layout_width="80dp"
         android:layout_height="20dp"
+        android:layout_marginTop="20dp"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/testimage1"
         android:background="@drawable/edittextshape" />
@@ -208,16 +210,28 @@
         android:layout_below="@+id/textView10"
         android:layout_marginTop="2dp"
         android:background="@drawable/edittextshape" />
-    
+ <TableLayout
+        android:id="@+id/table"
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/rewaterCelsius"
+         android:layout_marginTop="30dp" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            >
  <TextView
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView11"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="5dp"
+        android:textColor="#fff"
         android:text="@string/Name"
-        android:textColor="#FFFFFF"
+        
         android:textSize="16sp" />
 
     <TextView
@@ -225,11 +239,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView11"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="5dp"
         android:layout_toRightOf="@+id/textView12"
+        android:textColor="#fff"
         android:text="@string/Address"
-        android:textColor="#FFFFFF"
+       
         android:textSize="16sp" />
 
     <TextView
@@ -237,11 +252,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView11"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="5dp"
         android:layout_toRightOf="@+id/textView13"
         android:text="@string/MState"
-        android:textColor="#FFFFFF"
+        android:textColor="#fff"
         android:textSize="16sp" />
 
     <TextView
@@ -249,17 +264,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView11"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginLeft="41dp"
+        android:layout_marginTop="5dp"
+        android:textColor="#fff"
         android:layout_toRightOf="@+id/textView14"
         android:text="@string/Action"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp" />
+      
+        android:textSize="16sp"
+       />
+    
+    </TableRow>
+    </TableLayout>
       <ListView
         android:id="@+id/module_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView15"
+        android:layout_below="@+id/table"
         android:divider="#b5b5b5"
         android:dividerHeight="1dp" />
     

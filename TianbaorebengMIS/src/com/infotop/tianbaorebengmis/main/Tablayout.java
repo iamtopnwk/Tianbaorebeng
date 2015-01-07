@@ -30,21 +30,21 @@ public class Tablayout extends TabActivity {
 		TabSpec tab = tabHost.newTabSpec("DeviceState");
 		Intent i = new Intent(Tablayout.this, DeviceStateActivity.class);
 		i.putExtra("dId", deviceId);
-		tab.setIndicator("DeviceState");
+		tab.setIndicator(getResources().getString(R.string.DeviceState));;
 		tab.setContent(i);
 
 		// Tab for Songs
 		TabSpec tab1 = tabHost.newTabSpec("Command");
 		Intent i1 = new Intent(Tablayout.this, CommandActivity.class);
 		i1.putExtra("dId", deviceId);
-		tab1.setIndicator("Command");
+		tab1.setIndicator(getResources().getString(R.string.Command));
 		tab1.setContent(i1);
 
 		// Tab for Videos
 		TabSpec tab2 = tabHost.newTabSpec("Device");
 		Intent i2 = new Intent(Tablayout.this, DeviceActivity.class);
 		i2.putExtra("dId", deviceId);
-		tab2.setIndicator("Device");
+		tab2.setIndicator(getResources().getString(R.string.Device));
 		tab2.setContent(i2);
 
 		// Adding all TabSpec to TabHost

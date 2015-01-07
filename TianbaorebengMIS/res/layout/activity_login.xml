@@ -27,6 +27,7 @@
         android:layout_marginTop="10dp"
         android:drawableLeft="@drawable/ic_loginuser"
         android:ems="12"
+        android:text="admin"
         android:inputType="text" >
     </EditText>
 
@@ -40,6 +41,7 @@
         android:layout_marginTop="5dp"
         android:drawableLeft="@drawable/ic_loginpwd"
         android:ems="10"
+        android:text="123456"
         android:inputType="textPassword" >
     </EditText>
 

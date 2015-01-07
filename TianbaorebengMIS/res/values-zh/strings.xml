@@ -6,7 +6,7 @@
     <string name="action_settings">设置</string>
 
     <string-array name="choice_arrays">
-        <item>Choice</item>
+        <item>选择</item>
         <item>制热温度</item>
         <item>制冷温度</item>
         <item>运行模式</item>
@@ -22,10 +22,13 @@
     <!-- DeviceList Page -->
     <string name="DeviceList">设备列表</string>
     <string name="Operation">操作</string>
+     <string name="View">视图</string>
     
 <!--Command Page  -->
 <string name="Command">设备控制</string>
 <string name="RunMode">运行模式</string>
+<string name="Choice">选择</string>
+
 <string name="setting">设置</string>
 <string name="HeatingCelsius">制热温度:</string> 
 <string name="CoolingCelsius">制冷温度:</string> 
@@ -33,6 +36,7 @@
 <string name="stop">关机</string>
 <string name="reset">复位</string>
 <string name="defrost">除霜</string>
+
   <!-- Data State Page -->
     <string name="Tb_DeviceState">设备控制</string>
     <string name="DeviceUnitState">机组状态</string>

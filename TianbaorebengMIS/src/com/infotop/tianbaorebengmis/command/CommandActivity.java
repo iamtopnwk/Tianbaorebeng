@@ -39,7 +39,7 @@ public class CommandActivity extends Activity {
 
 	public void getRunModeButton(View view) {
 		Spinner runmodeData = (Spinner) findViewById(R.id.spinner1);
-		if (runmodeData.getSelectedItem().toString().trim().equals("Choice")) {
+		if (runmodeData.getSelectedItem().toString().trim().equals(getResources().getString(R.string.Choice))) {
 			//String s=getResources().getString(R.string.pleaseselectchoice);
 			Toast.makeText(getApplicationContext(),  getResources().getString(R.string.pleaseselectchoice),
 					Toast.LENGTH_SHORT).show();

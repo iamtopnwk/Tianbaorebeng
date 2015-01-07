@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="420dp"
+    android:layout_height="500dp"
     android:background="#1a7f92" >
 
     <ImageView
@@ -21,6 +21,8 @@
             android:id="@+id/TextView015"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            
             android:text="@string/RunMode"
             android:textColor="#ffffff"
             android:textSize="16sp" />
@@ -29,7 +31,7 @@
             android:id="@+id/spinner1"
             android:layout_width="120dp"
             android:layout_height="35dp"
-            android:layout_marginLeft="43dp"
+            android:layout_marginLeft="54dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/edittextshape"
             android:entries="@array/choice_arrays" />
@@ -38,7 +40,7 @@
             android:id="@+id/runModeSettings"
             android:layout_width="80dp"
             android:layout_height="37dp"
-            android:layout_marginLeft="2dp"
+            android:layout_marginLeft="40dp"
             android:background="@drawable/buttonshape1"
             android:onClick="getRunModeButton"
             android:text="@string/setting" />
@@ -58,6 +60,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/HeatingCelsius"
+             android:layout_marginLeft="5dp"
+            
             android:textColor="#ffffff"
             android:textSize="16sp" />
 
@@ -65,6 +69,7 @@
             android:id="@+id/editText20"
             android:layout_width="120dp"
             android:layout_height="30dp"
+              android:layout_marginLeft="50dp"
             android:background="@drawable/edittextshape"
             android:ems="10"
             android:hint="" >
@@ -74,7 +79,7 @@
             android:id="@+id/hCelsius"
             android:layout_width="80dp"
             android:layout_height="37dp"
-            android:layout_marginLeft="2dp"
+            android:layout_marginLeft="39dp"
             android:background="@drawable/buttonshape1"
             android:onClick="getHeatingCelsius"
             android:text="@string/setting" />
@@ -94,6 +99,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/CoolingCelsius"
+             android:layout_marginLeft="5dp"
+            
             android:textColor="#ffffff"
             android:textSize="16sp" />
 
@@ -101,6 +108,7 @@
             android:id="@+id/editText21"
             android:layout_width="120dp"
             android:layout_height="30dp"
+              android:layout_marginLeft="50dp"
             android:background="@drawable/edittextshape"
             android:ems="10"
             android:hint="" >
@@ -110,7 +118,7 @@
             android:id="@+id/cCelsius"
             android:layout_width="80dp"
             android:layout_height="37dp"
-            android:layout_marginLeft="2dp"
+            android:layout_marginLeft="39dp"
             android:background="@drawable/buttonshape1"
             android:onClick="getCoolingCelsius"
             android:text="@string/setting" />
@@ -121,7 +129,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tableRow21"
-        android:layout_marginLeft="60dp"
+        android:layout_marginLeft="70dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/ic_start"
         android:onClick="postDeviceState"
@@ -133,7 +141,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/start"
-        android:layout_marginLeft="73dp"
+        android:layout_marginLeft="79dp"
         android:text="@string/start"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="#ffffff" />
@@ -143,7 +151,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tableRow21"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="75dp"
         android:layout_marginTop="20dp"
         android:layout_toRightOf="@+id/start"
         android:background="@drawable/ic_stop"
@@ -157,6 +165,7 @@
         android:layout_alignBottom="@+id/textView2"
         android:layout_alignLeft="@+id/textView5"
         android:text="@string/stop"
+        android:layout_marginRight="10dp"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="#ffffff" />
 
@@ -165,7 +174,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/start"
-        android:layout_marginLeft="60dp"
+        android:layout_marginLeft="70dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/ic_reset"
         android:onClick="postDeviceReset" />
@@ -186,7 +195,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/stop"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="75dp"
         android:layout_marginTop="20dp"
         android:layout_toRightOf="@+id/reset"
         android:background="@drawable/ic_defrost"
@@ -200,6 +209,7 @@
         android:layout_alignRight="@+id/defrost"
         android:layout_below="@+id/defrost"
         android:layout_marginBottom="25dp"
+        android:layout_marginRight="20dp"
         android:text="@string/defrost"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="#ffffff" />
