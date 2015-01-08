@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">热泵空调远程监控系统服务器页面</string>
+    <string name="app_name">热泵远程监控</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">设置</string>
 
@@ -22,7 +22,7 @@
     <!-- DeviceList Page -->
     <string name="DeviceList">设备列表</string>
     <string name="Operation">操作</string>
-     <string name="View">视图</string>
+     <string name="View">查看</string>
     
 <!--Command Page  -->
 <string name="Command">设备控制</string>
@@ -50,8 +50,11 @@
     <string name="Address">模块地址</string>
     <string name="MState">模块状态</string>
     <string name="Action">操作</string>
-    <string name="use">使用</string>
+    <string name="use">启用</string>
     <string name="ban">禁用</string>
+      <string name="running">运行中</string>
+    <string name="stopping">停止中</string>
+    <string name="FastOperation">快捷操作:</string>
     <string name="use1">(使用)</string>
     <string name="DeviceState">设备状态</string>
     <string name="DeviceControl">设备控制</string>
@@ -69,7 +72,7 @@
      <string name="pleaseselectchoice">请选择</string>
     <string name="CoolingCelsiusshouldnotempty">制冷温度 不能是空</string>
     <string name="HeatingCelsiusshouldnotempty">制热温度 不能是空</string>
-    <string name="CommandisUpdated">插入成功</string>
+    <string name="CommandisUpdated">设置成功</string>
     <string name="Connectionerror">连接错误</string>
      <string name="loginerror">凭据无效</string>
      <!-- Login Page -->

@@ -11,72 +11,68 @@
         android:layout_height="100dp"
         android:src="@drawable/ic_top" />
 
+    <!-- Row 1 with single column -->
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout1"
+        android:background="@drawable/cell_shape" >
+    </ListView>
+
     <TextView
         android:id="@+id/text_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/mainImageId"
+        android:layout_centerHorizontal="true"
         android:text="@string/DeviceList"
         android:textColor="#ffffff"
-        android:layout_marginLeft="100dp"
         android:textSize="20sp"
         android:textStyle="bold" />
 
-    <!-- Row 1 with single column -->
-
-    <TableLayout
-        android:id="@+id/TableLayoutmain"
-        android:layout_width="fill_parent"
+    <LinearLayout
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/text_name" >
+        android:layout_below="@+id/text_name"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal" >
 
-        <TableRow
-            android:id="@+id/tableRow1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+        <TextView
+            android:id="@+id/did"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="22sp"
+            android:text="@string/DeviceName"
+            android:textColor="#000000"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/did"
-                android:layout_weight="1"
-                android:background="@drawable/cell_shape"
-                android:gravity="center"
-                android:padding="4dip"
-                android:text="@string/DeviceName"
-                android:textColor="#000000"
-                android:textSize="17dip"
-                android:textStyle="bold" />
+        <TextView
+            android:id="@+id/uname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/UserName"
+            android:textSize="22sp"
+            android:textColor="#000000"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/uname"
-                android:layout_weight="1"
-                android:background="@drawable/cell_shape"
-                android:gravity="center"
-                android:padding="4dip"
-                android:text="@string/UserName"
-                android:textColor="#000000"
-                android:textSize="17dip"
-                android:textStyle="bold" />
+        <TextView
+            android:id="@+id/operation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="22sp"
+            android:text="@string/Operation"
+            android:textColor="#000000"
+            android:textStyle="bold" />
+    </LinearLayout>
 
-            <TextView
-                android:id="@+id/operation"
-                android:layout_weight="1"
-                android:background="@drawable/cell_shape"
-                android:gravity="center"
-                android:padding="4dip"
-                android:text="@string/Operation"
-                android:textColor="#000000"
-                android:textSize="17dip"
-                android:textStyle="bold" />
-        </TableRow>
-    </TableLayout>
-    
-  
-    <ListView
-        android:id="@+id/list"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-          android:background="@drawable/cell_shape"
-        android:layout_below="@+id/TableLayoutmain">
-    </ListView>
-   
 </RelativeLayout>

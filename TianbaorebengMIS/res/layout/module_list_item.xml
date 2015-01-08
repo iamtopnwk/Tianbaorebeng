@@ -1,61 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#ffffff"
-            android:shrinkColumns="*"
-            android:stretchColumns="*" >
-            
-    
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:shrinkColumns="*"
+    android:stretchColumns="*" >
+
     <TableRow
-                android:id="@+id/tableRow13"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+        android:id="@+id/tableRow13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
 
-                <TextView
-                    android:id="@+id/name_tb_module"
-                    android:layout_weight="1"
-                    android:background="@drawable/cell_shape"
-                    android:gravity="right"
-                    android:padding="5dip"
-                    android:text="1"
-                    android:textColor="#000000" />
+        <TextView
+            android:id="@+id/name_tb_module"
+            android:layout_weight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:padding="5dip"
+            android:text="1"
+            android:textColor="#000000" />
 
-                <TextView
-                    android:id="@+id/address_tb_module"
-                    android:layout_weight="1"
-                    android:background="@drawable/cell_shape"
-                    android:gravity="right"
-                    android:padding="5dip"
-                    android:text="00"
-                    android:textColor="#000000" />
+        <TextView
+            android:id="@+id/address_tb_module"
+            android:layout_weight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:padding="5dip"
+            android:text="00"
+            android:textColor="#000000" />
 
-                <TextView
-                    android:id="@+id/mastate_tb_module"
-                    android:layout_weight="1"
-                    android:background="@drawable/cell_shape"
-                    android:gravity="right"
-                    android:padding="5dip"
-                    android:text="@string/use1"
-                    android:textColor="#000000" />
+        <TextView
+            android:id="@+id/mastate_tb_module"
+            android:layout_weight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:padding="5dip"
+            android:text="@string/use1"
+            android:textColor="#000000" />
 
-                 <Button
-                    android:id="@+id/useStateBtn"
-                    android:layout_width="38dp"
-                    android:layout_height="35dp"
-                    android:onClick="getUseButton"
-                    android:text="@string/use"
-                    android:background="@drawable/button_shape" />
+        <Button
+            android:id="@+id/useStateBtn"
+            android:layout_width="38dp"
+            android:layout_height="35dp"
+            android:background="@drawable/button_shape"
+            android:onClick="getUseButton"
+            android:text="@string/use" />
 
-                <Button
-                    android:id="@+id/banStateBtn"
-                    android:layout_width="38dp"
-                    android:layout_height="35dp"
-                    android:onClick="getBanButton"
-                    android:text="@string/ban"
-                    android:background="@drawable/button_shape" />
-                     
-            </TableRow>
-        
+        <Button
+            android:id="@+id/banStateBtn"
+            android:layout_width="38dp"
+            android:layout_height="35dp"
+            android:background="@drawable/button_shape"
+            android:onClick="getBanButton"
+            android:text="@string/ban" />
+    </TableRow>
 
 </TableLayout>

@@ -12,38 +12,9 @@
         android:layout_width="500dp"
         android:layout_height="150dp"
         android:contentDescription="@string/app_name"
-        android:gravity="center"
+        android:layout_centerHorizontal="true"
         android:src="@drawable/ic_title" >
     </ImageView>
-
-    <EditText
-        android:id="@+id/editTextLoginUser"
-       android:layout_width="220dp"
-        android:layout_height="40dp"
-        android:background="@drawable/edittextshape"
-        android:layout_alignRight="@+id/editTextLoginPwd"
-        android:layout_below="@+id/imageView1"
-        android:layout_marginLeft="55dp"
-        android:layout_marginTop="10dp"
-        android:drawableLeft="@drawable/ic_loginuser"
-        android:ems="12"
-        android:text="admin"
-        android:inputType="text" >
-    </EditText>
-
-    <EditText
-        android:id="@+id/editTextLoginPwd"
-       android:layout_width="220dp"
-        android:layout_height="40dp"
-        android:background="@drawable/edittextshape"
-        android:layout_below="@+id/editTextLoginUser"
-        android:layout_marginLeft="55dp"
-        android:layout_marginTop="5dp"
-        android:drawableLeft="@drawable/ic_loginpwd"
-        android:ems="10"
-        android:text="123456"
-        android:inputType="textPassword" >
-    </EditText>
 
     <!-- Row4 Column1 -->
 
@@ -52,12 +23,40 @@
         android:layout_width="220dp"
         android:layout_height="40dp"
         android:layout_below="@+id/editTextLoginPwd"
-        android:layout_marginLeft="55dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="41dp"
+        android:layout_centerHorizontal="true"
         android:background="@drawable/buttonshape"
         android:onClick="getSigninPage"
         android:text="@string/Usignin"
         android:textColor="#FFFFFF"
         android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/editTextLoginPwd"
+        android:layout_width="220dp"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/editTextLoginUser"
+        android:layout_centerVertical="true"
+        android:background="@drawable/edittextshape"
+        android:drawableLeft="@drawable/ic_loginpwd"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:text="123456" />
+
+    <EditText
+        android:id="@+id/editTextLoginUser"
+        android:layout_width="220dp"
+        android:layout_height="40dp"
+        android:layout_above="@+id/editTextLoginPwd"
+        android:layout_alignLeft="@+id/button1"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/edittextshape"
+        android:drawableLeft="@drawable/ic_loginuser"
+        android:ems="12"
+        android:inputType="text"
+        android:text="admin" >
+
+        <requestFocus />
+    </EditText>
 
 </RelativeLayout>
