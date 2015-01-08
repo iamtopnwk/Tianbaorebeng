@@ -54,7 +54,7 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main_page);
-		String serverURL = new HttpUrl().getUrl()+":8080/Tianbaorebeng/rest/devicesList";
+		String serverURL = new HttpUrl().getUrl()+"/rest/devicesList";
 		context=this;
 		//tl=(TableLayout)findViewById(R.id.TableLayoutmain3);
 		list = (ListView) findViewById(R.id.list);

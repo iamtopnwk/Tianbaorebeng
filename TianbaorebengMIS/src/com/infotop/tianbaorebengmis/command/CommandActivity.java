@@ -34,7 +34,7 @@ public class CommandActivity extends Activity {
 		setContentView(R.layout.activity_command);
 		deviceId=getIntent().getExtras().getString("dId");
 		serverURL = new HttpUrl().getUrl()
-				+ ":8080/Tianbaorebeng/rest/statusUpdate";
+				+ "/rest/statusUpdate";
 	}
 
 	public void getRunModeButton(View view) {

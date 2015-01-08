@@ -87,9 +87,9 @@ public class DeviceStateActivity extends Activity {
 		banBtn = (Button) findViewById(R.id.banStateBtn);
 		deviceId = getIntent().getExtras().getString("dId");
 		String serverURL = new HttpUrl().getUrl()
-				+ ":8080/Tianbaorebeng/rest/deviceList/" + deviceId;
+				+ "/rest/deviceList/" + deviceId;
 		serverURL1 = new HttpUrl().getUrl()
-				+ ":8080/Tianbaorebeng/rest/statusUpdate";
+				+ "/rest/statusUpdate";
 		// serverPostURL=new HttpUrl().getUrl()+
 		// ":8080/Tianbaorebeng/rest/statusUpdate";
 

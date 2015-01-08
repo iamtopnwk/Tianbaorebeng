@@ -78,7 +78,7 @@ public class DeviceActivity extends Activity {
 
 		deviceId = getIntent().getExtras().getString("dId");
 		String serverURL = new HttpUrl().getUrl()
-				+ ":8080/Tianbaorebeng/rest/deviceList/" + deviceId;
+				+ "/rest/deviceList/" + deviceId;
 
 		// Use AsyncTask execute Method To Prevent ANR Problem
 		new LongOperation().execute(serverURL);
