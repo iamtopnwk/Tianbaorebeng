@@ -41,16 +41,16 @@
 
                  <Button
                     android:id="@+id/useStateBtn"
-                    android:layout_width="38dp"
-                    android:layout_height="35dp"
+                    android:layout_width="28dp"
+                    android:layout_height="22dp"
                     android:onClick="getUseButton"
                     android:text="@string/use"
                     android:background="@drawable/button_shape" />
 
                 <Button
                     android:id="@+id/banStateBtn"
-                    android:layout_width="38dp"
-                    android:layout_height="35dp"
+                    android:layout_width="28dp"
+                    android:layout_height="22dp"
                     android:onClick="getBanButton"
                     android:text="@string/ban"
                     android:background="@drawable/button_shape" />
